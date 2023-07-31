@@ -97,6 +97,9 @@ require("mason-lspconfig").setup_handlers {
 	end
 }
 
+local wilder = require('wilder')
+wilder.setup({modes = {':', '/', '?'}, next_key= '<Tab>', previous_key= '<S-Tab>', accept_key= '<c-k>', reject_key= '<Up>'})
+
 require("code-completion")
 
 vim.cmd('source ~/.config/nvim/viml/legacyconf.vim')

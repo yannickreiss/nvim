@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  YouCompleteMe = {
-    loaded = true,
-    path = "/home/nick/.local/share/nvim/site/pack/packer/start/YouCompleteMe",
-    url = "https://github.com/Valloric/YouCompleteMe"
-  },
   ale = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/ale",
@@ -254,6 +249,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nick/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["wilder.nvim"] = {
+    loaded = true,
+    path = "/home/nick/.local/share/nvim/site/pack/packer/start/wilder.nvim",
+    url = "https://github.com/gelguy/wilder.nvim"
   }
 }
 

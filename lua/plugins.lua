@@ -14,12 +14,7 @@ return require('packer').startup(function(use)
      ts_update()
    end,
  }
- use {
-   'gelguy/wilder.nvim',
-   config = function()
-     -- config goes here
-   end,
- }
+ use { 'gelguy/wilder.nvim' }
  use { 'junegunn/fzf', run = ":call fzf#install()" }
  use 'junegunn/fzf.vim'
 -- use 'Valloric/YouCompleteMe'
