@@ -1,0 +1,13 @@
+snippet cred "My private Credentials" 
+Yannick Reiss <yannick.reiss@protonmail.ch>
+endsnippet
+
+snippet solve "Solve a python equation" 
+${1:1*1}`!p rv = ""
+try:
+	rv = eval(t[1])
+except SyntaxError:
+	rv = "?"
+snip.rv = f" = {rv}"`
+endsnippet
+
