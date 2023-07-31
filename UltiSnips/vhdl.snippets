@@ -1,0 +1,66 @@
+snippet addlib "add new library" A
+library $1;
+use $1.${2:package}.${3:all};
+$0
+endsnippet
+
+snippet entity "new entity"
+-- Entity $1: ${2:$1}
+entity ${1:Name} is
+	port($3
+	);
+end $1;
+$0
+endsnippet
+
+snippet addPort "add a new Port to an entity" A
+	${1:name}		:	${2:In/Out}	${3:std_logic}; -- ${4:What is this?}$0
+endsnippet
+
+snippet architecture "define an architecture" 
+-- Architecture $1 of $2: $3
+architecture ${1:name} of ${2:Entity_name} is
+	${4:Konstanten, Typen, Signale}
+begin
+	${5:Code}
+end $1;
+$0
+endsnippet
+
+snippet process "New Process in arch" 
+-- Process $1  ${3}
+${1:Name} : process (${2}) -- runs only, when $2 changed
+begin
+	$4
+end process;
+$0
+endsnippet
+
+snippet docstring "Header Comment" A
+-- `!p snip.rv = fn`
+-- Created on: `date`
+-- Author(s): ${1:Alexander Graf, Carl Ries, Yannick Reiß}
+-- Content: ${2: Entity `!p snip.rv = fn.split('.')[0]`}
+$0
+endsnippet
+
+snippet _generic "Add a generic instruction" A
+generic (${1:name} : ${2:integer} := ${3:8});$0
+endsnippet
+
+snippet std_logic_vector "Port is a vector" i
+std_logic_vector(${1:1} downto ${2:0});$0
+endsnippet
+
+snippet vhmeta "VHDL Annotation" A
+-- Comment from `whoami`: ${1:Description} => `date`
+endsnippet
+
+snippet vhtodo "VHDL Todo" A
+-- TODO from `whoami`: ${1: What to do?} => `date`
+endsnippet 
+
+snippet regflit "reg_idx from literal" iA
+std_logic_vector(to_unsigned('${1:Literal}', reg_adr_size));
+endsnippet
+

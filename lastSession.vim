@@ -13,11 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 ~/Documents/Programming/LaTeX/La/La.tex
+badd +28 init.lua
 argglobal
 %argdel
-$argadd ~/Documents/Programming/LaTeX/La/La.tex
-edit ~/Documents/Programming/LaTeX/La/La.tex
+$argadd init.lua
+edit init.lua
 argglobal
 setlocal fdm=expr
 setlocal fde=nvim_treesitter#foldexpr()
@@ -27,11 +27,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+let s:l = 27 - ((26 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 27
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

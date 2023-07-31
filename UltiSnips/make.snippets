@@ -1,0 +1,18 @@
+snippet javabuild "Build rules for Java" A
+build:
+	javac $(CLASS)
+
+run:
+	java $(CLASS)
+
+.PHONY: build run
+endsnippet
+
+snippet "__(\w+) " "This is a variable!" irA
+\$(`!p snip.rv = match.group(1)`) $0
+endsnippet
+
+snippet rule "Add new Rule" 
+${1:all}: $2
+	$0
+endsnippet

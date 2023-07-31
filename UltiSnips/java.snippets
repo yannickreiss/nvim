@@ -1,0 +1,65 @@
+global !p
+def complete(t, opts):
+	if t:
+		opts = [m[len(t):] for m in opts if m.startswith(t)]
+	if len(opts) == 1:
+		return opts[0]
+	return '(' + '|'.join(opts) + ')'
+endglobal
+
+snippet classmain "Snippet to create class with main function" A
+public class `!p snip.rv = fn.replace(".java", "")` {
+	public static void main(String[] args) {
+		${0:Code}
+	}
+}
+endsnippet
+
+snippet class "Snippet to create a class" 
+${1:public} class ${2:ClassName} ${3:extends} $4 {  
+	// variables
+	$5
+
+	// contructor
+	public $2 () {
+		$6
+	}
+
+	// methods
+	$7
+}
+$0
+endsnippet
+
+snippet fun "New Function with Documentation"
+/*
+ *	$3: $2
+ *	$4
+ *	${5: Description}
+ */
+
+$1`!p snip.rv = complete(t[1], ["public", "protected", "private"])` $2`!p snip.rv = complete(t[2], ["int", "float", "String", "char", "boolean", "short", "double", "long"])` ${3:MyFunc} (${4:void}) {
+	`!p
+if t[2] != "void":
+	snip.rv = f"{t[2]} rv = 0;"
+else:
+	snip.rv = ""`
+	$6
+	`!p 
+if t[2] != "void":
+	snip.rv = f"return rv;"
+else:
+	snip.rv = ""`
+}
+$0
+endsnippet
+
+snippet printf "This is JAVA :(" A
+System.out.println(${1:"Hello World!"});
+$0
+endsnippet
+
+snippet let "Variable Definition" A
+${1:private} ${2:int} ${3:name};
+$0
+endsnippet

@@ -1,0 +1,29 @@
+snippet fn "function declaration" i
+fn $1($2) `!p
+if t[3] == "":
+	snip.rv = ""
+else:
+	snip.rv = " -> "` $3 {
+	$4	
+}
+$0
+endsnippet
+
+snippet struct "struct declaration" 
+// $1
+// ${2:Description}
+struct ${1:Name} {
+	$3
+}
+$0
+endsnippet
+
+snippet impl "implement struct" 
+// Implementation of $1
+// ${2:Desciption}
+impl ${1:struct} {
+	$3
+}
+$0
+endsnippet
+

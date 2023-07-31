@@ -1,0 +1,608 @@
+snippet colx "textcolor"
+\\textcolor{${1:red}}{$2}$0
+endsnippet
+
+snippet tred "text red"
+\\textcolor{red}{$1}$0
+endsnippet
+
+snippet tblue "text blue"
+\\textcolor{blue}{$1}$0
+endsnippet
+
+snippet tgreen "text green"
+\\textcolor{green}{$1}$0
+endsnippet
+
+snippet colb "boxcolor"
+\\colorbox{${1:blue}!${2:25}}{$3}$0
+endsnippet
+
+snippet imth "inlinemath"
+$ $1 $ $0
+endsnippet
+
+snippet fmth "fullmath"
+\\[
+$1
+\\]
+$0
+endsnippet
+
+snippet vec "Vector"
+\\vec{$1}$0
+endsnippet
+
+snippet tag "tag and text inbetween"
+${1:placeholder}
+$2
+$1
+$0
+endsnippet
+
+snippet env "Environment"
+\\begin{$1}
+$2
+\\end{$1}
+$0
+endsnippet
+
+snippet code "listing without own config"
+\\begin{lstlisting}
+$1
+\\end{lstlisting}
+$0
+endsnippet
+
+snippet ccpp "C++ listing configuration"
+\\lstset{ basicstyle=\\ttfamily\\small, language=C++, keywordstyle=\\color{blue}\\bfseries } $0
+endsnippet
+
+snippet casm "Assembler listing configuration"
+\\lstset{basicstyle=\\ttfamily\\small, language={[${1:x86masm}]Assembler}, keywordstyle=\\color{${2:red}}\\bfseries} $0
+endsnippet
+
+snippet cshell "ZSH/BASH config"
+\\lstset{basicstyle=\\ttfamily\\small, language={bash}, keywordstyle=\\color{${2:green}}\\bfseries} $0
+endsnippet
+
+snippet cocode "Free config"
+\\lstset{basicstyle=\\ttfamily\\small, language={$1}, keywordstyle=\\color{${2:red}}\\bfseries} $0
+endsnippet
+
+snippet confbook "Configuration for Lectures"
+\\documentclass[a4paper]{report}
+\\usepackage[utf8]{inputenc}
+\\usepackage[ngerman]{babel}
+\\usepackage[T1]{fontenc}
+\\usepackage{amsmath}
+\\usepackage{amsfonts}
+\\usepackage{amssymb}
+\\usepackage{makeidx}
+\\usepackage[straightvoltages]{circuitikz}
+\\usepackage[locale=DE]{siunitx}
+\\usepackage{tikz}
+\\usepackage[left=1cm, right=2cm, top=3cm, bottom=3cm, bindingoffset=1cm]{geometry}
+\\usepackage{graphicx}
+\\usepackage{lmodern}
+\\usepackage{float}
+\\usepackage{fancyhdr}
+\\usepackage{listings}
+\\usepackage{cancel}
+\\usepackage{xcolor}
+\\usepackage{interval}
+\\usepackage{hyperref}
+\\author{${1:Yannick Reiß}}
+\\title{$2}
+\\pagestyle{fancy}
+\\fancyhead[C]{}
+\\fancyhead[L]{$2}
+\\fancyfoot[C]{\thepage}
+
+${3:colorset}
+$0
+endsnippet
+
+snippet confartcl "Configuration for short articles"
+\\documentclass[16pt,a4paper]{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage[ngerman]{babel}
+\\usepackage[T1]{fontenc}
+\\usepackage{amsmath}
+\\usepackage{amsfonts}
+\\usepackage{amssymb}
+\\usepackage{fancyhdr}
+\\usepackage{makeidx}
+\\usepackage[straightvoltages]{circuitikz}
+\\usepackage[locale=DE]{siunitx}
+\\usepackage{tikz}
+\\usepackage{graphicx}
+\\usepackage{lmodern}
+\\usepackage{float}
+\\usepackage{cancel}
+\\usepackage[left=1cm, right=2cm, top=3cm, bottom=3cm, bindingoffset=1cm]{geometry}
+\\usepackage{listings}
+\\usepackage{xcolor}
+\\usepackage{interval}
+\\usepackage{hyperref}
+\\author{${1:Yannick Reiß}}
+\\title{$2}
+\\pagestyle{fancy}
+\\fancyhead[C]{}
+\\fancyhead[L]{$2}
+\\fancyfoot[C]{\thepage}
+
+${3:colorset}
+$0
+endsnippet
+
+snippet img "Images"
+\\begin{figure}
+\\centering
+\\includegraphics[width=${1:0.7}\\linewidth]{${2}}
+\\caption{${3:Abbildung}}
+\\end{figure}
+$0
+endsnippet
+
+snippet document "Add document environment"
+\\begin{document}
+$0
+\\end{document}
+endsnippet
+
+snippet land "Logical and"
+\\wedge $0
+endsnippet
+
+snippet lor "Logical or"
+\\vee $0
+endsnippet
+
+snippet ubrace "Underbrace"
+\\underbrace{$1}_{$2} $0
+endsnippet
+
+snippet fall "For all"
+\\forall{$1}
+$0
+endsnippet
+
+snippet paragraph "Paragraph"
+\\paragraph{$1}
+$0
+endsnippet
+
+snippet menge "Menge der __ Zahlen"
+\\mathbb{$1}$0
+endsnippet
+
+snippet xdelete "Cross out"
+\\xcancel{$1}$0
+endsnippet
+
+snippet -> "Right normal Arrow"
+\\rightarrow $0
+endsnippet
+
+snippet larrow "Left normal Arrow"
+\\leftarrow $0
+endsnippet
+
+snippet frac "Fracture"
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet mspace "Math Space"
+\\quad $0
+endsnippet
+
+snippet mmspace "Math double Space"
+\\qquad $0
+endsnippet
+
+snippet sum "Sum"
+\\sum_{i=${1:0}}^{${2:n}} $3 \\qquad $0
+endsnippet
+
+snippet prod "Product"
+\\prod_{i=${1:1}}^{${2:N}} \\quad $3 \\qquad$0
+endsnippet
+
+snippet ltab "Table environment"
+\\begin{tabular}{${1:c c c}}
+$0
+\\end{tabular}
+endsnippet
+
+snippet ctab "Table column"
+$1 & $2 & $3 \\\\\\
+$0
+endsnippet
+
+snippet lltab "Large table environment"
+\\begin{tabular}{${1:c c c c c}}
+$0
+\\end{tabular}
+endsnippet
+
+snippet cctab "Large column environment"
+$1 & $2 & $3 & $4 & $5 \\\\\\
+$0
+endsnippet
+
+snippet setab "Small table environment"
+\\begin{center}
+\\begin{tabular}{${1:c c}}
+$1
+\\end{tabular}
+\\end{center}
+$0
+endsnippet
+
+snippet sctab "Small table column"
+$1 & $2 \\\\
+\\\\
+$0
+endsnippet
+
+snippet lquote "Low Quote"
+´$1´$0
+endsnippet
+
+snippet fquote "Full Quote"
+´$1´ \\textit{($2)}$0
+endsnippet
+
+snippet colorset "std colorset (6 colors)"
+\\definecolor{red}{RGB}{228, 3, 3}
+\\definecolor{orange}{RGB}{255, 140, 0}
+\\definecolor{yellow}{RGB}{255, 237, 0}
+\\definecolor{green}{RGB}{0, 128, 38}
+\\definecolor{indigo}{RGB}{36, 64, 142}
+\\definecolor{blue}{RGB}{36, 64, 142}
+\\definecolor{violet}{RGB}{115, 41, 130}
+endsnippet
+
+snippet href "html reference"
+\\href{https://${1:link}}{\\underline{\\textcolor{blue}{${2:Text}}}}$0
+endsnippet
+
+snippet *_ "Intervall/Isotope-Notation" i
+^{$1}_{$2}$0
+endsnippet
+
+snippet hook "Reference to text"
+\\hyperref[$1]{$2}$0
+endsnippet
+
+snippet curled "{ ... }"
+\\left\\{ $0 \\right\\}
+endsnippet
+
+snippet round "( ... )"
+\\left( $0 \\right)
+endsnippet
+
+snippet menc "Mathmode-text"
+\\text{ $1 }$0
+endsnippet
+
+snippet period "Periodic number"
+\\overline{$1}$0
+endsnippet
+
+snippet leq "lesser equal"
+\\leq
+endsnippet
+
+snippet geq "greater equal"
+\\geq
+endsnippet
+
+snippet let "lesser than"
+<
+endsnippet
+
+snippet grt "greater than"
+>
+endsnippet
+
+snippet case "if else mathstyle"
+\\begin{cases}
+$1 & \\quad \\text{$2}\\\\\\ $3 & \\quad \\text{$4}\\\\\\ \\end{cases}$0
+endsnippet
+
+snippet median "Median"
+\\overset{\\thicksim}{$1}$0
+endsnippet
+
+snippet ival "Intervall"
+\\interval[$1]{$2}{$3}$0
+endsnippet
+
+snippet mul "multiplication"
+\\cdot
+endsnippet
+
+snippet root "nth root"
+\\sqrt[${1:2}]{$2}$0
+endsnippet
+
+snippet sdef "Definition"
+\\colorbox{blue!25}{Definition: $1} \\\\\\$0
+endsnippet
+
+snippet mlgs "Lineares Gleichungssytem"
+\\begin{gather}
+$0
+\\end{gather}
+endsnippet
+
+snippet cobol "COBOL config"
+\\lstset{ basicstyle=\\ttfamily\\small, language=COBOL, numbers=left, keywordstyle=\\color{blue}\\bfseries} $0
+endsnippet
+
+snippet '(.*)__' "sub" r
+`!p snip.rv = match.group(1)`_{$1}$0
+endsnippet
+
+snippet '(.*)\*\*' "upup" r
+`!p snip.rv = match.group(1)`^{$1}$0
+endsnippet
+
+snippet ... "dots"
+\\dots
+endsnippet
+
+snippet fsf "text serif"
+\\textsf{$1}$0
+endsnippet
+
+snippet fblk "text block"
+\\texttt{$1}{$0}
+endsnippet
+
+snippet fit "text italic"
+\\textit{$1}$0
+endsnippet
+
+snippet '//(.+)//' "Make Text italic" rA
+\\textit{`!p snip.rv = match.group(1)`}$0
+endsnippet
+
+snippet fbf "text bold"
+\\textbf{$1}$0
+endsnippet
+
+snippet '\*\*(.+)\*\*' "Make Text bold" rA
+\\textbf{`!p snip.rv = match.group(1)`}$0
+endsnippet
+
+snippet bit "itemize"
+\\begin{itemize}
+	\\item $1
+\\end{itemize}
+$0
+endsnippet
+
+snippet ben "enumerate"
+\\begin{enumerate}
+	\\item $1 
+\\end{enumerate}
+$0
+endsnippet
+
+snippet +ni+ "next item" A
+
+\\item $1
+endsnippet
+
+snippet sch "chapter"
+\\chapter{$1}$0
+endsnippet
+
+snippet sse "Section"
+\\section{$1}$0
+endsnippet
+
+snippet sss "Subsection"
+\\subsection{$1}$0
+endsnippet
+
+snippet ssn "Subsubsection"
+\\subsubsection{$1}$0
+endsnippet
+
+snippet par "Paragraph"
+\\paragraph{$1}$0
+endsnippet
+
+snippet mquote "max quote"
+\`$1\` (${2:author} : \\textit{${3:source}}, ${4:year})$0
+endsnippet
+
+snippet qed "Quod erat demonstrantum"
+\\begin{flushright}
+$\#$
+\\end{flushright}
+$0
+endsnippet
+
+snippet <- "Easy Left"
+\\leftarrow $0
+endsnippet
+
+snippet => "Double Right"
+\\Rightarrow $0
+endsnippet
+
+snippet <= "Double Left"
+\\Leftarrow $0
+endsnippet
+
+snippet circuit "Circuit environment"
+\\colorbox{blue!10}{
+\\begin{circuitikz}[european resistors]
+$1
+\\end{circuitikz}}
+$0
+endsnippet
+
+snippet edraw "Draw into electric circuit"
+\\draw(${1:0}, ${2:0}) 
+$3
+;
+$0
+endsnippet
+
+snippet 'R "Insert Resistor"
+to [R=$R_{$1}: $2 \Omega$, ${3:i =$i$}, ${4:*-*}] ($5, $6)
+$0
+endsnippet
+
+snippet 'W "Wire"
+to [short, ${1:i=$i$}, ${2:*-*}] ($3, $4)
+$0
+endsnippet
+
+snippet 'V "Voltage"
+to [V, v=$U_{$1}: $2V$, ${3:i=$i$}, ${4:*-*}] ($5, $6)
+$0
+endsnippet
+
+snippet 'L "Coil"
+to [L=$L_{$1}: $2H$, ${3:i=$i$}, ${4:*-*}] ($3, $4)
+$0
+endsnippet
+
+snippet 'C "Capacitor"
+to [C=$C_{$1}: $2F$, ${3:i=$i$}, ${4:*-*}] ($3, $4)
+$0
+endsnippet
+
+snippet 'W' "Wired powerline"
+to [short, ${1:*-*}] ($2, $3)
+$0
+endsnippet
+
+snippet 'G "GROUND"
+to [short] node[ground] {$1} ($2, $3)
+$0
+endsnippet
+
+snippet 'SA "(Sende)-Antenne"
+to [short] node[antenna] {$1} ($2, $3)
+$0
+endsnippet
+
+snippet timenow "The current time"
+`date`
+endsnippet
+
+snippet texmeta "Meta with stamp for better documentation"
+% Bookmark `!p import random as ran
+if not snip.c:
+	snip.rv = t[1][0] + str(ran.randint(10, 100))` Content ${1:Title} on `date` by `echo $USER`
+$0
+endsnippet
+
+snippet lmth "List math with align" b
+\\begin{align*}
+$1
+\\end{align*}
+$0
+endsnippet
+
+snippet lexp "List math expression"
+$1 &= ${2:First} & ${3:Second} \\\\
+$0
+endsnippet
+
+snippet definition "Box with definition"
+\\framebox{
+\\colorbox{blue!25}{
+\\begin{minipage}{1.0\\textwidth}
+\\textbf{Definition: $1}\\\\
+$2
+\\end{minipage}}}
+$0
+endsnippet
+
+snippet attention "Box for attention"
+\\framebox{
+\\colorbox{red!25}{
+\\begin{minipage}{1.0\\textwidth}
+\\textbf{Achtung: $1}\\\\
+$2
+\\end{minipage}}}
+$0
+endsnippet
+
+snippet headline "Insert a Headline" 
+\\lhead{}
+\\chead{\\rightmark}
+\\rhead{\\date}
+\\renewcommand{\\headrulewidth}{1pt}
+endsnippet
+
+snippet footline "Insert a footer"
+\\lfoot{}
+\\cfoot{}
+\\rfoot{}
+endsnippet
+
+global !p
+def create_table_tabs(snip):
+	anon_snippet_body = ""
+	# get start and end line number of (expanded) snippet
+	start = snip.snippet_start[0]
+	end = snip.snippet_end[0]
+	# Append current line into snippet
+	for i in range(start, end+1):
+		anon_snippet_body += snip.buffer[i]
+		anon_snippet_body += "" if i == end else '\n'
+	# delete expanded snippet line while preserving the line
+	for i in range(start, end):
+		del snip.buffer[start]
+	# Empty last line, while preserving the line
+	snip.buffer[start] = ''
+	# Expand anonymous snippet
+	snip.expand_anon(anon_snippet_body)
+
+def create_table(cols, rows, sep, start, end, head="##"):
+	res = ""
+	placeholder = 1
+	for _ in range(0, int(rows)):
+		res += start + head.replace("##", f"${placeholder} ")
+		placeholder += 1
+		for _ in range(0, int(cols) - 1):
+			res += sep + head.replace("##", f" ${placeholder} ")
+			placeholder += 1
+		res += end
+	return res[:-1]
+endglobal
+
+post_jump "create_table_tabs(snip)"
+snippet 'table(\d+),(\d+)' "Table with given row and column count" r
+\begin{center}
+\begin{tabular}{`!p
+orient = "c"
+for _ in range(0, int(match.group(1))): orient += " c"
+snip.rv = orient`}
+`!p
+snip.rv = create_table(match.group(1), match.group(2), "&", "\t", "\\\\\\\\\n")
+`$0
+\end{tabular}
+\end{center}
+endsnippet
+
+post_jump "create_table_tabs(snip)"
+snippet 'matrix(\d+),(\d+)' "Matrix with given row and column count" r
+\begin{pmatrix}
+`!p
+snip.rv = create_table(match.group(1), match.group(2), "&", "\t", "\\\\\\\\\n")
+`$0
+\end{pmatrix}
+endsnippet
+

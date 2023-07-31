@@ -33,7 +33,7 @@ vim.g.UltiSnipsExpandTrigger="<tab>"
 vim.g.UltiSnipsJumpForwardTrigger="<tab>"
 vim.g.UltiSnipsJumpBackwardTrigger="<S-Tab>"
 vim.g.UltiSnipsEditSplit="vertical"
-vim.g.UltiSnipsSnippetDirectories={"/home/nick/.vim/UltiSnips"}
+vim.g.UltiSnipsSnippetDirectories={"~/.config/nvim/UltiSnips"}
 
 -- indentLine config
 vim.g.indentLine_char = '▏'

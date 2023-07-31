@@ -1,0 +1,181 @@
+snippet header "Header wrapper" b
+#ifndef $1
+#define $1
+
+$0
+
+#endif//$1
+endsnippet
+
+snippet for "For-loop head"
+for (${1:int i} = ${2:0}; ${3:i}; ${4:--i}) {
+	$5
+}
+$0
+endsnippet
+
+snippet exfun "New Function with Documentation"
+/**
+ *	$2 -> $1
+ *	@return $1
+ *  @brief Description:
+ *	  ${4: Description}
+ *
+	@param `!p
+params = t[3].split(", ")
+rval = ""
+for param in params:
+	if len(param.split(' ')) == 2:
+		rval += f" *  {param}:\t{t[2]}_{param.split(' ')[1]}\n"
+snip.rv = rval`
+ */
+${1:int} ${2:MyFunc} (${3:void}) {
+	`!p
+if t[1] != "void":
+	snip.rv = f"{t[1]} rv = 0;"
+else:
+	snip.rv = ""`
+	$5
+	`!p 
+if t[1] != "void":
+	snip.rv = f"return rv;"
+else:
+	snip.rv = ""`
+}
+$0
+endsnippet
+
+snippet fun "Function template"
+${1:int} ${2:Name} (${3:void}) {
+	$5
+
+	return ${6:`!p
+if t[1] != "void":
+	snip.rv = f"0"
+else:
+	snip.rv = ""`};
+}
+$0
+endsnippet
+
+snippet while "while loop head"
+while (${1:true}) {
+	$2
+}
+$0
+endsnippet
+
+snippet ifelse "If-Clause"
+if ($1) {
+	$2
+} else {
+	$3
+}
+$0
+endsnippet
+
+snippet class "Add new class" bA
+class $1 ${2::} `!p
+if t[2] == ":":
+	snip.rv = "public"
+else:
+	snip.rv = ""` $3 {
+public:
+	$1() {
+`!p
+variables = t[4].replace('\n', '').replace('\t', '').split(";");
+rv = ""
+for var in variables:
+	name = var.split(' ')
+	if var != "" and len(name) >= 2:
+		name[1] = name[1].split('[')[0]
+		rv += f"\t\t{name[1]} = 0;\n"
+snip.rv = rv`
+	$5
+	}
+
+	// Methoden
+	$6
+
+	// set-Methods
+`!p
+variables = t[4].replace('\n', '').replace('\t', '').split(";");
+rv = ""
+for var in variables:
+	name = var.split(' ')
+	if var != "" and len(name) >= 2:
+		name[1] = name[1].split('[')[0]
+		if '[' in var:
+			name[0] += '*'
+		rv += f"\tvoid set{name[1]} ({name[0]} _{name[1]});\n"
+snip.rv = rv`
+
+	// get-Methods
+`!p
+variables = t[4].replace('\n', '').replace('\t', '').split(";");
+rv = ""
+for var in variables:
+	name = var.split(' ')
+	if var != "" and len(name) >= 2:
+		name[1] = name[1].split('[')[0]
+		if '[' in var:
+			name[0] += '*'
+		rv += f"\t{name[0]} get{name[1]} ();\n"
+snip.rv = rv`
+
+private:
+	$4	
+
+};
+`!p
+variables = t[4].replace('\n', '').replace('\t', '').split(";");
+rv = ""
+for var in variables:
+	name = var.split(' ')
+	if var != "" and len(name) >= 2:
+		name[1] = name[1].split('[')[0]
+		if '[' in var:
+			name[0] += '*'
+		rv += f"void {t[1]}::set{name[1]} ({name[0]} _{name[1]}) {'{'}{name[1]} = _{name[1]};{'}'}\n"
+snip.rv = rv`
+`!p
+variables = t[4].replace('\n', '').replace('\t', '').split(";");
+rv = ""
+for var in variables:
+	name = var.split(' ')
+	if var != "" and len(name) >= 2:
+		name[1] = name[1].split('[')[0]
+		if '[' in var:
+			name[0] += '*'
+		rv += f"{name[0]} {t[1]}::get{name[1]} () {'{'} return {name[1]}; {'}'}\n"
+snip.rv = rv`
+$0
+endsnippet
+
+snippet defstruct "define a new type with a struct" A
+typedef struct $1 $1;
+struct $1{
+	$2
+};
+endsnippet
+
+snippet docomment "Meta Comment" A
+/* 
+ * Filename:		`!p snip.rv = fn`
+ * Author:			${1:Yannick Reiss}
+ * Project:			${2:Project Name}
+ * Copyright:		${3:None}
+ * Description:		${4:Helpful description}
+ */
+$0
+endsnippet
+
+snippet let+ "Declare and initialize Variable" A
+${1:int} ${2:Variable} = ${3:0}; /* ${4:Description} */
+$0
+endsnippet
+
+snippet let- "Declare Variable" A
+${1:int} ${2:Variable}; /* ${3:Description} */
+$0
+endsnippet

@@ -1,0 +1,92 @@
+snippet template "template for new program" A
+      *-----------------------------------------------------------------
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.	${1:Title}.
+      *AUTHOR.     	${2:Yannick Reiß}.
+	  *CONTENT.		${3:Beschreibung}.
+      *-----------------------------------------------------------------
+
+      *-----------------------------------------------------------------
+       DATA DIVISION.
+      *-------------------------
+       FILE SECTION.
+
+      *-------------------------
+       WORKING-STORAGE SECTION.
+  	   $4	
+      *-----------------------------------------------------------------      
+      
+      *-----------------------------------------------------------------
+       PROCEDURE DIVISION.
+         $0
+         STOP RUN.
+      *-----------------------------------------------------------------
+endsnippet
+
+snippet let "Add new Variable" A
+${1:01} ${2:Name} PIC ${3:999}${4:(8) }${5:VALUE }.
+$0
+endsnippet
+
+snippet compute "Insert a computation" A
+COMPUTE ${1:Expression}.
+endsnippet
+
+global !p
+def complete(t, opts):
+	if t:
+		opts = [m[len(t):] for m in opts if m.startswith(t)]
+	if len(opts) == 1:
+		return opts[0]
+	return '(' + '|'.join(opts) + ')'
+endglobal
+
+snippet calc "Add a Calculation with autocomplete" A
+$1`!p snip.rv = complete(t[1], ['ADD', 'DIVIDE', 'MULTIPLY', 'SUBTRACT'])` ${2:Var1} `!p
+try:
+	snip.rv = {'ADD': 'TO', 'DIVIDE': 'INTO', 'MULTIPLY': 'BY', 'SUBTRACT': 'FROM'}[t[1] + complete(t[1], ['ADD', 'DIVIDE', 'MULTIPLY', 'SUBTRACT'])]
+except KeyError:
+	snip.rv = '---'
+` ${3:Var2} GIVING ${4:VarResult}.
+$0
+endsnippet
+
+snippet move "Move value to another value" A
+MOVE ${1:Const/Var} TO ${2:Var}.
+$0
+endsnippet
+
+snippet display "Display a contant or Variable" A
+DISPLAY ${1:"Hello World!"}.
+$0
+endsnippet
+
+snippet accept "Accept a Value to an uninitialized Variable" A
+ACCEPT ${1:Variable}.
+$0
+endsnippet
+
+snippet strinit "Initialize an empty String" A
+INITIALIZE ${1:Stringvariable}.
+$0
+endsnippet
+
+snippet init "Inizialize a numerical Value" A
+INITIALIZE ${1:Numerical variable} REPLACING NUMERIC DATA BY ${2:ZEROS}.
+$0
+endsnippet
+
+snippet ifthen "If-then-else Clause" A
+IF ${1:Condition} THEN
+	${2:Do this}
+ELSE
+	${3:Do that}
+END-IF.
+$0
+endsnippet
+
+snippet ifis "IF-Condition 'is' POS/NEG" A
+IS $1`!p snip.rv = complete(t[1], ['POSITIVE', 'NEGATIVE'])` $0
+endsnippet
+
+
