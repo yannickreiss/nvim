@@ -1,10 +1,12 @@
 snippet fn "function declaration" i
+// $3 $1
+// ${4:Description}
 fn $1($2) `!p
 if t[3] == "":
 	snip.rv = ""
 else:
 	snip.rv = " -> "` $3 {
-	$4	
+	$5
 }
 $0
 endsnippet
@@ -25,5 +27,11 @@ impl ${1:struct} {
 	$3
 }
 $0
+endsnippet
+
+snippet for "for-loop" 
+for ${1:i} in ${2:$3..$4} {
+	$5
+}$0
 endsnippet
 

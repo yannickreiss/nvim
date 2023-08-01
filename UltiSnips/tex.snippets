@@ -23,9 +23,7 @@ snippet ,m "inlinemath" iA
 endsnippet
 
 snippet ;M "fullmath" iA
-\\[
-$1
-\\]
+\\[ $1 \\]
 $0
 endsnippet
 
@@ -33,25 +31,16 @@ snippet vec "Vector"
 \\vec{$1}$0
 endsnippet
 
-snippet tag "tag and text inbetween"
-${1:placeholder}
-$2
-$1
-$0
-endsnippet
-
-snippet env "Environment" A
+snippet env "Environment" bA
 \\begin{$1}
 	$2
-\\end{$1}
-$0
+\\end{$1}$0
 endsnippet
 
 snippet code "listing without own config"
 \\begin{lstlisting}
 $1
-\\end{lstlisting}
-$0
+\\end{lstlisting}$0
 endsnippet
 
 snippet ccpp "C++ listing configuration"
@@ -68,76 +57,6 @@ endsnippet
 
 snippet cocode "Free config"
 \\lstset{basicstyle=\\ttfamily\\small, language={$1}, keywordstyle=\\color{${2:blue}}\\bfseries, numbers=left} $0
-endsnippet
-
-snippet confbook "Configuration for Lectures"
-\\documentclass[a4paper]{report}
-\\usepackage[utf8]{inputenc}
-\\usepackage[ngerman]{babel}
-\\usepackage[T1]{fontenc}
-\\usepackage{amsmath}
-\\usepackage{amsfonts}
-\\usepackage{amssymb}
-\\usepackage{makeidx}
-\\usepackage[straightvoltages]{circuitikz}
-\\usepackage[locale=DE]{siunitx}
-\\usepackage{tikz}
-\\usepackage[left=1cm, right=2cm, top=3cm, bottom=3cm, bindingoffset=1cm]{geometry}
-\\usepackage{graphicx}
-\\usepackage{lmodern}
-\\usepackage{float}
-\\usepackage{fancyhdr}
-\\usepackage{listings}
-\\usepackage{cancel}
-\\usepackage{xcolor}
-\\usepackage{interval}
-\\usepackage{hyperref}
-\\author{${1:Yannick Reiß}}
-\\title{$2}
-\\pagestyle{fancy}
-\\fancyhead[L]{\\leftmark}
-\\fancyhead[C]{}
-\\fancyhead[R]{\\rightmark}
-\\fancyfoot[L]{$1}
-\\fancyfoot[R]{\\thepage}
-\\fancyfoot[C]{$2}
-
-$0
-endsnippet
-
-snippet confartcl "Configuration for short articles"
-\\documentclass[a4paper]{article}
-\\usepackage[utf8]{inputenc}
-\\usepackage[ngerman]{babel}
-\\usepackage[T1]{fontenc}
-\\usepackage{amsmath}
-\\usepackage{amsfonts}
-\\usepackage{amssymb}
-\\usepackage{fancyhdr}
-\\usepackage{makeidx}
-\\usepackage[straightvoltages]{circuitikz}
-\\usepackage[locale=DE]{siunitx}
-\\usepackage{tikz}
-\\usepackage{graphicx}
-\\usepackage{lmodern}
-\\usepackage{float}
-\\usepackage{cancel}
-\\usepackage[left=1cm, right=2cm, top=3cm, bottom=3cm, bindingoffset=1cm]{geometry}
-\\usepackage{listings}
-\\usepackage{xcolor}
-\\usepackage{interval}
-\\usepackage{hyperref}
-\\author{${1:Yannick Reiß}}
-\\title{$2}
-\\pagestyle{fancy}
-\\fancyhead[L]{\\leftmark}
-\\fancyhead[C]{}
-\\fancyhead[R]{\\rightmark}
-\\fancyfoot[L]{$1}
-\\fancyfoot[R]{\\thepage}
-\\fancyfoot[C]{$2}
-
-$0
 endsnippet
 
 snippet img "Images"
@@ -167,11 +86,11 @@ $0
 \\end{document}
 endsnippet
 
-snippet land "Logical and"
+snippet && "Logical and"
 \\wedge $0
 endsnippet
 
-snippet lor "Logical or"
+snippet || "Logical or"
 \\vee $0
 endsnippet
 
@@ -191,14 +110,6 @@ endsnippet
 
 snippet xdelete "Cross out" i
 \\xcancel{$1}$0
-endsnippet
-
-snippet -> "Right normal Arrow"
-\\rightarrow $0
-endsnippet
-
-snippet larrow "Left normal Arrow"
-\\leftarrow $0
 endsnippet
 
 snippet frac "Fracture" i
@@ -221,59 +132,12 @@ snippet prod "Product"
 \\prod_{i=${1:1}}^{${2:N}} \\quad $3 \\qquad$0
 endsnippet
 
-snippet ltab "Table environment"
-\\begin{tabular}{${1:c c c}}
-$0
-\\end{tabular}
-endsnippet
-
-snippet ctab "Table column"
-$1 & $2 & $3 \\\\\\
-$0
-endsnippet
-
-snippet lltab "Large table environment"
-\\begin{tabular}{${1:c c c c c}}
-$0
-\\end{tabular}
-endsnippet
-
-snippet cctab "Large column environment"
-$1 & $2 & $3 & $4 & $5 \\\\\\
-$0
-endsnippet
-
-snippet setab "Small table environment"
-\\begin{center}
-\\begin{tabular}{${1:c c}}
-$1
-\\end{tabular}
-\\end{center}
-$0
-endsnippet
-
-snippet sctab "Small table column"
-$1 & $2 \\\\
-\\\\
-$0
-endsnippet
-
 snippet lquote "Low Quote"
-\´$1\´$0
+´$1\´$0
 endsnippet
 
 snippet fquote "Full Quote"
-´$1´ \\textit{($2)}$0
-endsnippet
-
-snippet colorset "std colorset (6 colors)"
-\\definecolor{red}{RGB}{228, 3, 3}
-\\definecolor{orange}{RGB}{255, 140, 0}
-\\definecolor{yellow}{RGB}{255, 237, 0}
-\\definecolor{green}{RGB}{0, 128, 38}
-\\definecolor{indigo}{RGB}{36, 64, 142}
-\\definecolor{blue}{RGB}{36, 64, 142}
-\\definecolor{violet}{RGB}{115, 41, 130}
+'$1´ \\textit{($2)}$0
 endsnippet
 
 snippet href "html reference"
@@ -288,15 +152,15 @@ snippet hook "Reference to text"
 \\hyperref[$1]{$2}$0
 endsnippet
 
-snippet curled "{ ... }"
+snippet {} "{ ... }"
 \\left\\{ $1 \\right\\} $0
 endsnippet
 
-snippet tacked "[...]"
+snippet [] "[...]"
 \\left[ $1 \\right] $0
 endsnippet
 
-snippet round "( ... )"
+snippet () "( ... )"
 \\left( $1 \\right) $0
 endsnippet
 
@@ -401,21 +265,16 @@ endsnippet
 
 snippet bit "itemize"
 \\begin{itemize}
-	\\item $1
+	\\item  $1`!p t[1] = t[1].replace("+\n", "\n\t\\item")`
 \\end{itemize}
 $0
 endsnippet
 
 snippet ben "enumerate"
 \\begin{enumerate}
-	\\item $1 
+	\\item  $1`!p t[1] = t[1].replace("+\n", "\n\t\\item")` 
 \\end{enumerate}
 $0
-endsnippet
-
-snippet +ni+ "next item" A
-
-\\item $1 % $0
 endsnippet
 
 snippet sch "chapter"
@@ -447,16 +306,20 @@ snippet qed "Quod erat demonstrantum"
 $0
 endsnippet
 
-snippet <- "Easy Left"
-\\leftarrow $0
+snippet <- "Easy Left" iA
+\\(\\leftarrow\\)$0
 endsnippet
 
-snippet => "Double Right"
-\\Rightarrow $0
+snippet => "Double Right" iA
+\\(\\Rightarrow\\)$0
 endsnippet
 
-snippet <= "Double Left"
-\\Leftarrow $0
+snippet <= "Double Left" iA
+\\(\\Leftarrow\\)$0
+endsnippet
+
+snippet -> "Easy Right" iA
+\\(\\rightarrow\\)$0
 endsnippet
 
 snippet circuit "Circuit environment"
@@ -557,19 +420,6 @@ $2
 $0
 endsnippet
 
-snippet headline "Insert a Headline" 
-\\lhead{}
-\\chead{\\rightmark}
-\\rhead{\\date}
-\\renewcommand{\\headrulewidth}{1pt}
-endsnippet
-
-snippet footline "Insert a footer"
-\\lfoot{}
-\\cfoot{}
-\\rfoot{}
-endsnippet
-
 global !p
 def create_table_tabs(snip):
 	anon_snippet_body = ""
@@ -641,14 +491,14 @@ snippet "menge_(\w+)" "Menge der X Zahlen" rA
 endsnippet
 
 snippet pq "pq-formula" i
-\pq{$1}{$2} $0
+\\pq{$1}{$2} $0
 endsnippet
 
-snippet idr. "In der Regel" A
+snippet idr "In der Regel" i
 in der Regel
 endsnippet
 
-snippet usw. "und so weiter" A
+snippet usw "und so weiter" i
 und so weiter
 endsnippet
 
@@ -675,7 +525,10 @@ snippet integral "add Integral" i
 \integral{$1}{$2}{$3}{$4} $0
 endsnippet
 
-snippet cotable "create table with code extension" i
-\table ${1:row} ${2:column} ${3:Title}
+snippet frame "Add a new Frame" b
+\\subsection{$1}
+\\begin{frame}
+\\frametitle{$1}
+	$2
+\\end{frame}$0
 endsnippet
-
