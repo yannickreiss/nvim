@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Documents/HSRM/Semester4/EmbSec/Praktikum/it-security
+cd ~/.config/nvim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,25 +13,25 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +50 plot_traces.py
+badd +17 UltiSnips/all.snippets
 argglobal
 %argdel
-$argadd plot_traces.py
-edit plot_traces.py
+$argadd UltiSnips/all.snippets
+edit UltiSnips/all.snippets
 argglobal
-setlocal fdm=expr
+setlocal fdm=syntax
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 50 - ((46 * winheight(0) + 23) / 47)
+let s:l = 17 - ((16 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 50
+keepjumps 17
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -46,7 +46,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
