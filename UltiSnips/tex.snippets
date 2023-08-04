@@ -31,7 +31,7 @@ snippet vec "Vector"
 \\vec{$1}$0
 endsnippet
 
-snippet env "Environment" bA
+snippet #env "Environment" bA
 \\begin{$1}
 	$2
 \\end{$1}$0
@@ -164,7 +164,7 @@ snippet () "( ... )"
 \\left( $1 \\right) $0
 endsnippet
 
-snippet menc "Mathmode-text" iA
+snippet ,text "Mathmode-text" iA
 \\text{ $1 }$0
 endsnippet
 
@@ -178,14 +178,6 @@ endsnippet
 
 snippet geq "greater equal"
 \\geq
-endsnippet
-
-snippet let "lesser than"
-<
-endsnippet
-
-snippet grt "greater than"
->
 endsnippet
 
 snippet case "if else mathstyle"
@@ -202,11 +194,11 @@ snippet ival "Intervall"
 endsnippet
 
 snippet xx "multiplication" i
-\\cdot
+\\cdot $0
 endsnippet
 
-snippet root "nth root"
-\\sqrt[$1]{$2}$0
+snippet root "nth root" i
+\\sqrt[$1]{$2} $0
 endsnippet
 
 snippet sdef "Definition"
@@ -265,16 +257,20 @@ endsnippet
 
 snippet bit "itemize"
 \\begin{itemize}
-	\\item  $1`!p t[1] = t[1].replace("+\n", "\n\t\\item")`
+	\\item  $1`!p t[1] = t[1].replace(" \n", "\n\t\\item")`
 \\end{itemize}
 $0
 endsnippet
 
 snippet ben "enumerate"
 \\begin{enumerate}
-	\\item  $1`!p t[1] = t[1].replace("+\n", "\n\t\\item")` 
+	\\item  $1`!p t[1] = t[1].replace(" \n", "\n\t\\item")` 
 \\end{enumerate}
 $0
+endsnippet
+
+snippet - "new item" b
+\\item  $0
 endsnippet
 
 snippet sch "chapter"
@@ -532,3 +528,8 @@ snippet frame "Add a new Frame" b
 	$2
 \\end{frame}$0
 endsnippet
+
+snippet != "not equal" iA
+\\neq $0
+endsnippet
+

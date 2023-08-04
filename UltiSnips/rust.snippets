@@ -35,3 +35,35 @@ for ${1:i} in ${2:$3..$4} {
 }$0
 endsnippet
 
+snippet while "while loop"
+while $1 {
+	$2
+} $0
+endsnippet
+
+global !p
+import re
+def create_parameter_placeholders(snip):
+	placeholders_amount = int(snip.buffer[snip.line].strip())
+
+	snip.buffer[snip.line] = ''
+
+	anon_snippet_body = 'println!("' + '{}'.join(['$' + str(i+1) for i in range(placeholders_amount)]) + f"${placeholders_amount}" + '"'
+
+	if placeholders_amount > 0:
+		anon_snippet_body = anon_snippet_body + ', '
+	
+	anon_snippet_body = anon_snippet_body + ', '.join(['$' + str(i+1) for i in range(placeholders_amount, 2*placeholders_amount)]) + ");"
+
+	snip.expand_anon(anon_snippet_body)
+endglobal
+
+post_jump "create_parameter_placeholders(snip)"
+snippet "print\d+" "println" rA
+`!p snip.rv = match.group(1)`
+endsnippet
+
+snippet println "println" A
+println!("$1");$0
+endsnippet
+

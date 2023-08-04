@@ -14,8 +14,10 @@ nnoremap <C-t> :call OpenTerm()<CR>
 set splitright
 set splitbelow
 
+set clipboard+=unnamedplus
+
 " Update Plugins and Treesitter languages
-autocmd VimLeave * mksession! ~/.config/nvim/lastSession.vim
+autocmd VimLeave * mksession! ~/.config/nvim/lastSession.vi
 
 " autosave for Markdown and Latex
 set updatetime=800
