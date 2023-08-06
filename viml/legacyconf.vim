@@ -16,6 +16,12 @@ set splitbelow
 
 set clipboard+=unnamedplus
 
+" Autoformat on save
+augroup FormatAutogroup
+    autocmd!
+    autocmd BufWritePost * FormatWrite
+augroup END
+
 " Update Plugins and Treesitter languages
 autocmd VimLeave * mksession! ~/.config/nvim/lastSession.vi
 

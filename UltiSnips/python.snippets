@@ -8,3 +8,21 @@ Created on: `date`
 $0
 endsnippet
 
+snippet def "Python Function" A
+def ${1:function}($2):
+	"""
+	${3:function description}
+
+	Args:
+		${2} (${4:type}): ${5:description}
+
+	Returns:
+		$6 ${7:description}
+	"""
+	`!p
+if t[6] != "" and not t[8].endswith(f"return {t[6]}"):
+	t[8] = t[8] + f"\n\treturn {t[6]}"`
+	$8
+$0
+endsnippet
+

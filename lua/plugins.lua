@@ -42,4 +42,5 @@ return require('packer').startup(function(use)
  use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
  use 'quangnguyen30192/cmp-nvim-ultisnips'
  use 'ryanoasis/vim-devicons'
+ use 'mhartington/formatter.nvim'
 end)
