@@ -68,6 +68,14 @@ snippet img "Images"
 $0
 endsnippet
 
+snippet figure "add figure" b
+\\begin{figure}[${1:h}]
+\\centering
+	$0
+\\caption{$2}
+\\end{figure}
+endsnippet
+
 snippet document "Add document environment"
 \\begin{document}
 \\input{~/latex/formulas.tex}
@@ -164,7 +172,7 @@ snippet () "( ... )"
 \\left( $1 \\right) $0
 endsnippet
 
-snippet ,text "Mathmode-text" iA
+snippet ,mt "Mathmode-text" iA
 \\text{ $1 }$0
 endsnippet
 
@@ -264,7 +272,7 @@ endsnippet
 
 snippet ben "enumerate"
 \\begin{enumerate}
-	\\item  $1`!p t[1] = t[1].replace(" \n", "\n\t\\item")` 
+	\\item  $1`!p t[1] = t[1].replace(" \n", "\n\t\\item")`
 \\end{enumerate}
 $0
 endsnippet
@@ -327,7 +335,7 @@ $0
 endsnippet
 
 snippet edraw "Draw into electric circuit"
-\\draw(${1:0}, ${2:0}) 
+\\draw(${1:0}, ${2:0})
 $3
 ;
 $0
@@ -505,11 +513,11 @@ snippet tikzenv "tikzenvironment" A
 $0
 endsnippet
 
-snippet flowstart "insert flowstart" 
+snippet flowstart "insert flowstart"
 \\flowstart{$1}{$2}$0
 endsnippet
 
-snippet flowstop "insert flowstop" 
+snippet flowstop "insert flowstop"
 \\flowstop{$1}{$2}$0
 endsnippet
 
@@ -533,3 +541,7 @@ snippet != "not equal" iA
 \\neq $0
 endsnippet
 
+snippet "@(\w)" "insert greek letter" irA
+\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega'}
+snip.rv = letters[ match.group(1) ]`
+endsnippet
