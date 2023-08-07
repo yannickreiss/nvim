@@ -1,0 +1,33 @@
+snippet entry "Add new entry" bA
+
+-----------------------------------------------------------
+--- Title:  $1
+--- Date:   ${2:`date`}
+--- Author: ${3:`whoami`}
+--- Host:   `hostname`
+-----------------------------------------------------------
+Tags: $4
+
+$5
+
+-----------------------------------------------------------
+$0
+endsnippet
+
+snippet 1) "Enumerated List" b
+1) $1
+`!p
+if t[1] == "":
+	index = 2
+if "  \n" in t[1]:
+	t[1] = t[1].replace("  \n", f"\n{index})")
+	index += 1`
+$0
+endsnippet
+
+snippet - "Itemized List" b
+- $1
+`!p
+t[1] = t[1].replace("  \n", f"\n-")`
+$0
+endsnippet
