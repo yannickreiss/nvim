@@ -27,9 +27,25 @@ autocmd VimLeave * mksession! ~/.config/nvim/lastSession.vi
 
 " set spellcheck according to Filetype
 autocmd VimEnter * set spell spelllang=en_us
-autocmd Vimenter *.tex set spell spellang=de_de
-autocmd Vimenter *.txt set spell spellang=de_de
-autocmd Vimenter *.md set spell spellang=de_de
+
+function Litde()
+    set spell spelllang=de_de
+endfunction
+
+function Liten()
+    set spell spelllang=en_us
+endfunction
+
+nnoremap <C-l> :call Liten()<CR>
+nnoremap <C-m> :call Litde()<CR>
+
+" Theme
+" Light
+
+
+" Dark
+nnoremap <M-+> :colo morning<CR>
+nnoremap <M--> :colo ron<CR>
 
 " autosave for Markdown and Latex
 set updatetime=800
