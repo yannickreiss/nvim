@@ -5,7 +5,7 @@ nnoremap <C-a> :NERDTreeToggle<CR>
 
 " open builtin terminal
 function OpenTerm()
-	vsplit 
+	vsplit
 	terminal
 endfunction
 nnoremap <C-t> :call OpenTerm()<CR>
@@ -25,6 +25,12 @@ augroup END
 " Update Plugins and Treesitter languages
 autocmd VimLeave * mksession! ~/.config/nvim/lastSession.vi
 
+" set spellcheck according to Filetype
+autocmd VimEnter * set spell spelllang=en_us
+autocmd Vimenter *.tex set spell spellang=de_de
+autocmd Vimenter *.txt set spell spellang=de_de
+autocmd Vimenter *.md set spell spellang=de_de
+
 " autosave for Markdown and Latex
 set updatetime=800
 autocmd CursorHold *.md w
@@ -38,7 +44,7 @@ function RestoreSession()
 	endif
 endfunction
 
-" Git-Blame config
+" Git-Blame configuration
 let g:gitblame_message_template = '		=>	<author> • <summary> • <date>'
 let g:gitblame_date_format = '%r'
 
