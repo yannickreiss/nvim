@@ -76,3 +76,11 @@ endif
 autocmd FileType vhdl setlocal omnifunc=lsp#complete
 
 nnoremap <silent>    <C-0> <Cmd>BufferNext<CR>
+
+" update function and call
+function Update_Sys()
+    PackerSync
+    TSUpdate
+endfunction
+
+nnoremap <M-u> :call Update_Sys()<CR>
