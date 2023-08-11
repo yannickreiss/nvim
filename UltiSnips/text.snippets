@@ -31,3 +31,30 @@ snippet - "Itemized List" b
 t[1] = t[1].replace("  \n", f"\n-")`
 $0
 endsnippet
+
+global !p
+def complete(t, opts):
+	if t:
+		opts = [ m[len(t):] for m in opts if m.startswith(t)]
+	if len(opts) == 1:
+		return opts[0]
+	else:
+		return f"({'|'.join(opts)})"
+endglobal
+
+snippet mgl "DLRG neues Mitglied" b
+${1:Num}|${2:Eintrittsdatum}`!p
+if t[2] != "Eintrittsdatum" and len(t[2]) == 8:
+	if len(t[2]) > 2:
+		t[2] = f"{t[2][0:2]}.{t[2][2:]}"
+	if len(t[2]) > 4:
+		t[2] = f"{t[2][:5]}.{t[2][5:]}"
+`|${3:Geburtsdatum}`!p
+if t[3] != "Eintrittsdatum" and len(t[3]) == 8:
+	if len(t[3]) > 2:
+		t[3] = f"{t[3][0:2]}.{t[3][2:]}"
+	if len(t[3]) > 4:
+		t[3] = f"{t[3][:5]}.{t[3][5:]}"
+`|${4:PLZ}|${5}`!p snip.rv= complete(t[5], ['Offenbach', 'Hanau', 'Mühlheim', 'Frankfurt'])`|${6:Adresse}|${7:Nachname}`!p t[7] = t[7].upper()`, ${8:Vorname}
+
+endsnippet
