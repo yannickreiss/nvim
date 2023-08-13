@@ -159,5 +159,5 @@ if vim.g.neovide then
 	vim.g.neovide_scale_factor = 1.0
 end
 
-vim.cmd("source ./viml/legacyconf.vim")
-vim.cmd("source ./viml/macros.vim")
+vim.cmd("source ~/.config/nvim/viml/legacyconf.vim")
+vim.cmd("source ~/.config/nvim/viml/macros.vim")
