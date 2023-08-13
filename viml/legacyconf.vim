@@ -36,16 +36,18 @@ function Liten()
     set spell spelllang=en_us
 endfunction
 
-nnoremap <C-l> :call Liten()<CR>
-nnoremap <C-m> :call Litde()<CR>
+nnoremap <C-e> :call Liten()<CR>
+nnoremap <C-g> :call Litde()<CR>
 
 " Theme
-" Light
-
-
-" Dark
 nnoremap <M-+> :colo morning<CR>
 nnoremap <M--> :colo ron<CR>
+
+" Fuzzy finder
+nnoremap <C-f> :Lines<CR>
+
+" Save using strg+s
+nnoremap <C-s> :w<CR>
 
 " autosave for Markdown and Latex
 set updatetime=800
