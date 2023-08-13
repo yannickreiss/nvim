@@ -52,9 +52,6 @@ nnoremap <C-s> :w<CR>
 " autosave for Markdown and Latex
 set updatetime=800
 autocmd CursorHold *.md w
-" autocmd BufAdd *.md !okular %&
-"terminator -e "latexmk -pdf -f </dev/null" &
-nnoremap <C-y> :!latexmk -pdf -silent -f </dev/null <CR>
 
 function RestoreSession()
 	if @% == ""
@@ -63,7 +60,7 @@ function RestoreSession()
 endfunction
 
 " Git-Blame configuration
-let g:gitblame_message_template = '		=>	<author> • <summary> • <date>'
+let g:gitblame_message_template = '		=>	<author> • <date> • <summary>'
 let g:gitblame_date_format = '%r'
 
 if executable('vhdl-tool')
@@ -83,6 +80,7 @@ nnoremap <silent>    <C-0> <Cmd>BufferNext<CR>
 function Update_Sys()
     PackerSync
     TSUpdate
+    MasonUpdate
 endfunction
 
 nnoremap <M-u> :call Update_Sys()<CR>

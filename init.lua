@@ -1,4 +1,4 @@
---vim.cmd('source viml/init.vim')
+-- vim.cmd('source viml/init.vim')
 -- Basic setup configuration
 vim.cmd([[
 set nocompatible
@@ -21,7 +21,7 @@ vim.opt.guifont = "DroidSansMono Nerd Font 11"
 -- set colorscheme
 vim.opt.termguicolors = true
 vim.cmd([[
-colorscheme morning
+colorscheme ron
 ]])
 
 -- vim.cmd('source ~/.config/nvim/viml/plugins.vim')
@@ -35,7 +35,7 @@ vim.g.UltiSnipsEditSplit = "vertical"
 vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/UltiSnips" }
 
 -- indentLine config
-vim.g.indentLine_char = "▏"
+vim.g.indentLine_char = "┆"
 
 -- NERDTree Config
 vim.g.NERDTreeShowHidden = 1
@@ -95,11 +95,6 @@ require("formatter").setup({
 		},
 	},
 })
--- YCM config
--- replace tab by crtl-k
--- vim.cmd("let g:ycm_key_list_select_completion = ['<c-k>']")
--- vim.cmd("inoremap <expr> <Tab> pumvisible() ? '\\<c-k>' : 'ᐅ'")
--- vim.g.ycm_global_ycm_extra_conf = '~/.config/nvim/python/.ycm_extra_conf.py'
 
 -- Treesitter config
 local configs = require("nvim-treesitter.configs")
@@ -148,7 +143,13 @@ require("mason-lspconfig").setup_handlers({
 })
 
 local wilder = require("wilder")
-wilder.setup({ modes = { ":", "/", "?" } }) --, next_key= '<Tab>', previous_key= '<S-Tab>', accept_key= '<c-k>', reject_key= '<Up>'})
+wilder.setup({
+	modes = { ":", "/", "?" },
+	next_key = "<Tab>",
+	previous_key = "<S-Tab>",
+	accept_key = "<c-k>",
+	reject_key = "<Up>",
+})
 
 require("code-completion")
 
@@ -158,4 +159,5 @@ if vim.g.neovide then
 	vim.g.neovide_scale_factor = 1.0
 end
 
-vim.cmd("source ~/.config/nvim/viml/legacyconf.vim")
+vim.cmd("source ./viml/legacyconf.vim")
+vim.cmd("source ./viml/macros.vim")
