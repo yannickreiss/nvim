@@ -1,12 +1,13 @@
-snippet cred "My private Credentials" 
+snippet cred "My private Credentials"
 Yannick Reiss <yannick.reiss@protonmail.ch>
 endsnippet
 
-snippet solve "Solve a python equation" 
+snippet solve "Solve a python equation"
 ${1:1*1}`!p rv = ""
+from math import *
 try:
 	rv = eval(t[1])
-except SyntaxError:
+except:
 	rv = "?"
 snip.rv = f" = {rv}"`
 endsnippet
@@ -15,7 +16,6 @@ snippet dd "Date and Time" i
 `date`
 endsnippet
 
-snippet credhsrm "Credentials HSRM" b
+snippet credhsrm "Credentials HSRM"
 Yannick Reiß (yreis001) <yannick.reiss@student.hs-rm.de>
 endsnippet
-
