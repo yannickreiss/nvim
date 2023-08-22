@@ -13,7 +13,7 @@ if t[1] != "void":
 else:
 	snip.rv = ""`
 	$5
-	`!p 
+	`!p
 if t[1] != "void":
 	snip.rv = f"return rv;"
 else:
@@ -60,7 +60,6 @@ snip.rv = rval`
 ${1:int} ${2:MyFunc} (${3:void});
 endsnippet
 
-
 snippet exfun "New Function with Documentation"
 /**
  *	$2 -> $1
@@ -82,7 +81,7 @@ if t[1] != "void":
 else:
 	snip.rv = ""`
 	$5
-	`!p 
+	`!p
 if t[1] != "void":
 	snip.rv = f"return rv;"
 else:
@@ -120,7 +119,7 @@ if (-1 == `!p snip.rv = match.group(1)`) {
 $0
 endsnippet
 
-snippet swapint "Swap two integer or numerical variables" 
+snippet swap "Swap two integer or numerical variables"
 /* Swap Variables $1 and $2 */
 ${1:Var1}	=	$1	+	${2:Var2};
 $2	=	$1	-	$2;
@@ -140,10 +139,6 @@ def complete(t, opts):
 		return opts[0]
 	return '(' + '|'.join(opts) + ')'
 endglobal
-
-snippet def "Completer for predefined Values"
-$1`!p snip.rv = complete(t[1], ['EXIT_SUCCESS', 'EXIT_FAILURE', 'INT_MAX', 'INT_MIN'])`
-endsnippet
 
 snippet printf "Cast printf result to 'void' if heturn value is unneeded" bA
 (void)printf("$1"`!p
@@ -291,7 +286,7 @@ if (`!p snip.rv = match.group(1)` < 0) {
 	perror("fork error on creating new subprocess '`!p snip.rv = match.group(1)`'.");
 	exit(EXIT_FAILURE);
 } else if (!`!p snip.rv = match.group(1)`) {
-	/* fork runs from here */ 
+	/* fork runs from here */
 	${1:execve(proc, args, NULL)};
 }
 $0
@@ -360,4 +355,3 @@ if ( fflush(stdout) ) {
 	exit(EXIT_FAILURE);
 	}
 endsnippet
-

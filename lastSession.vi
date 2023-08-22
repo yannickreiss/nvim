@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Documents/HSRM/Semester4/EmbSec/Praktikum/it-security/Docs
+cd ~/.config/nvim/viml
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,15 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +132 Documentation.tex
-badd +109 ~/.config/nvim/UltiSnips/tex.snippets
-badd +7 ~/.config/nvim/UltiSnips/all.snippets
+badd +1 legacyconf.vim
 argglobal
 %argdel
-$argadd Documentation.tex
-edit Documentation.tex
+$argadd legacyconf.vim
+edit legacyconf.vim
 argglobal
-balt ~/.config/nvim/UltiSnips/all.snippets
 setlocal fdm=expr
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
@@ -30,12 +27,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 132 - ((27 * winheight(0) + 19) / 38)
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 132
-normal! 014|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

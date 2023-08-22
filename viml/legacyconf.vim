@@ -22,9 +22,6 @@ augroup FormatAutogroup
     autocmd BufWritePost * FormatWrite
 augroup END
 
-" Update Plugins and Treesitter languages
-autocmd VimLeave * mksession! ~/.config/nvim/lastSession.vi
-
 " set spellcheck according to Filetype
 autocmd VimEnter * set spell spelllang=en_us
 
@@ -41,17 +38,10 @@ nnoremap <C-g> :call Litde()<CR>
 
 " Theme
 nnoremap <M-+> :colo morning<CR>
-nnoremap <M--> :colo ron<CR>
+nnoremap <M--> :colo slate<CR>
 
 " Fuzzy finder
 nnoremap <C-f> :Lines<CR>
-
-" Save using strg+s
-nnoremap <C-s> :w<CR>
-
-" autosave for Markdown and Latex
-set updatetime=800
-autocmd CursorHold *.md w
 
 function RestoreSession()
 	if @% == ""
@@ -84,3 +74,5 @@ function Update_Sys()
 endfunction
 
 nnoremap <M-u> :call Update_Sys()<CR>
+
+nnoremap <C-b> :!lualatex % < /dev/null<CR>

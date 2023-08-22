@@ -36,7 +36,7 @@ if t[1] != "void":
 else:
 	snip.rv = ""`
 	$5
-	`!p 
+	`!p
 if t[1] != "void":
 	snip.rv = f"return rv;"
 else:
@@ -124,7 +124,7 @@ for var in variables:
 snip.rv = rv`
 
 private:
-	$4	
+	$4
 
 };
 `!p
@@ -160,7 +160,7 @@ struct $1{
 endsnippet
 
 snippet docomment "Meta Comment" A
-/* 
+/*
  * Filename:		`!p snip.rv = fn`
  * Author:			${1:Yannick Reiss}
  * Project:			${2:Project Name}
@@ -178,4 +178,21 @@ endsnippet
 snippet let- "Declare Variable" A
 ${1:int} ${2:Variable}; /* ${3:Description} */
 $0
+endsnippet
+
+snippet pfun "prototype for function" bA
+/**
+ *	$2 -> $1
+ *	@return $1
+ *	@brief Description:
+ *		${4: Description}
+ *	@param Parameter:`!p
+params = t[3].split(",")
+rval = ""
+for param in params:
+	if len(param.split(' ')) >= 2:
+		rval += f"\n *\t\t{param}:\t{t[2]}_{param.split(' ')[1]}"
+snip.rv = rval`
+ */
+${1:int} ${2:MyFunc} (${3:void});
 endsnippet

@@ -21,7 +21,7 @@ vim.opt.guifont = "DroidSansMono Nerd Font 11"
 -- set colorscheme
 vim.opt.termguicolors = true
 vim.cmd([[
-colorscheme ron
+colorscheme slate
 ]])
 
 -- vim.cmd('source ~/.config/nvim/viml/plugins.vim')
