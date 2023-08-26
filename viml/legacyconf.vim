@@ -75,4 +75,23 @@ endfunction
 
 nnoremap <M-u> :call Update_Sys()<CR>
 
-nnoremap <C-b> :!lualatex % < /dev/null<CR>
+" Call build function
+function! Build()
+    let l:filetype = &filetype
+
+    if l:filetype == 'c' || l:filetype == 'cpp' || l:filetype == 'h' || l:filetype == 'hpp'
+        execute 'make'
+    elseif l:filetype == 'py' || l:filetype == 'python'
+        execute '!python3 %'
+    elseif l:filetype == 'tex'
+        execute '!lualatex % < /dev/null'
+    elseif l:filetype == 'rs'
+        execute 'cargo run'
+    elseif l:filetype == 'S'
+        execute 'make'
+    else
+        echo "Unsupported file type: " . l:filetype
+    endif
+endfunction
+
+nnoremap <C-b> :call Build()<CR>
