@@ -44,6 +44,26 @@ vim.g.NERDTreeShowHidden = 1
 vim.g.lexima_enable_basic_rules = 1
 vim.g.lexima_enable_newline_rules = 1
 
+-- Highlight undo options
+require("highlight-undo").setup({
+	duration = 1000,
+	undo = {
+		hlgroup = "HighlightUndo",
+		mode = "n",
+		lhs = "u",
+		map = "undo",
+		opts = {},
+	},
+	redo = {
+		hlgroup = "HighlightUndo",
+		mode = "n",
+		lhs = "<C-r>",
+		map = "redo",
+		opts = {},
+	},
+	highlight_for_count = true,
+})
+
 -- Nvim Formatter
 -- Utilities for creating configurations
 local util = require("formatter.util")
