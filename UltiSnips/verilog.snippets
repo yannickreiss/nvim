@@ -42,3 +42,11 @@ endsnippet
 snippet ,double "set bus to size of a double word" A
 [63:0]$0
 endsnippet
+
+snippet module "Add module declaration" b
+module ${1:MODULE_NAME} (
+	$2
+);
+	$0
+endmodule // $1
+endsnippet
