@@ -89,6 +89,8 @@ function! Build()
         execute 'cargo run'
     elseif l:filetype == 'S'
         execute 'make'
+    elseif l:filetype == 'verilog'
+        execute 'verilator --binary %'
     else
         echo "Unsupported file type: " . l:filetype
     endif
