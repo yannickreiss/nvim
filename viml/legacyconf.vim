@@ -97,5 +97,5 @@ function! Build()
 endfunction
 
 nnoremap <C-b> :call Build()<CR>
-nnoremap <C-w> :bdelete<CR>
+nnoremap <C-x> :bdelete<CR>
 nnoremap <C-y> :b#<CR>
