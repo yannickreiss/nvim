@@ -173,7 +173,7 @@ snippet () "( ... )"
 endsnippet
 
 snippet ,t "Mathmode-text" iA
-\\text{ $1 }$0
+\\text{$1}$0
 endsnippet
 
 snippet period "Periodic number" i
@@ -407,7 +407,7 @@ endsnippet
 snippet def "Box with definition"
 \\framebox{
 \\colorbox{blue!25}{
-\\begin{minipage}{1.0\\textwidth}
+\\begin{minipage}{0.90\\textwidth}
 \\textbf{Definition: $1}\\\\
 $2
 \\end{minipage}}}
@@ -417,7 +417,7 @@ endsnippet
 snippet attention "Box for attention"
 \\framebox{
 \\colorbox{red!25}{
-\\begin{minipage}{1.0\\textwidth}
+\\begin{minipage}{0.90\\textwidth}
 \\textbf{Achtung: $1}\\\\
 $2
 \\end{minipage}}}
@@ -483,7 +483,7 @@ endsnippet
 snippet colorbox "color box: set own caption and content"
 \\framebox{
 \\colorbox{${1:green}!20}{
-\\begin{minipage}{1.0\\textwidth}
+\\begin{minipage}{0.90\\textwidth}
 \\textbf{$2}\\\\
 $3
 \\end{minipage}}}
