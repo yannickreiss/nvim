@@ -21,7 +21,7 @@ vim.opt.guifont = "DroidSansMono Nerd Font 11"
 -- set colorscheme
 vim.opt.termguicolors = true
 vim.cmd([[
-colorscheme slate
+colorscheme tokyonight-night
 ]])
 
 -- vim.cmd('source ~/.config/nvim/viml/plugins.vim')
@@ -162,15 +162,6 @@ require("mason-lspconfig").setup_handlers({
 	end,
 })
 
-local wilder = require("wilder")
-wilder.setup({
-	modes = { ":", "/", "?" },
-	next_key = "<Tab>",
-	previous_key = "<S-Tab>",
-	accept_key = "<c-k>",
-	reject_key = "<Up>",
-})
-
 require("code-completion")
 
 -- neovide configuration
@@ -180,4 +171,3 @@ if vim.g.neovide then
 end
 
 vim.cmd("source ~/.config/nvim/viml/legacyconf.vim")
-vim.cmd("source ~/.config/nvim/viml/macros.vim")
