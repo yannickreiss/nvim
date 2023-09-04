@@ -172,7 +172,7 @@ snippet () "( ... )"
 \\left( $1 \\right) $0
 endsnippet
 
-snippet ,mt "Mathmode-text" iA
+snippet ,t "Mathmode-text" iA
 \\text{ $1 }$0
 endsnippet
 
@@ -542,10 +542,21 @@ snippet != "not equal" iA
 endsnippet
 
 snippet "@(\w)" "insert greek letter" irA
-\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu'}
-snip.rv = letters[ match.group(1) ]`
+\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta'}
+try:
+	snip.rv = letters[ match.group(1) ]
+except KeyError:
+	snip.rv = "UNDEFINED"`
 endsnippet
 
 snippet _- "Escape _ easier" iA
 \\_
+endsnippet
+
+snippet bsp. "Beispielsweise" iA
+beispielsweise
+endsnippet
+
+snippet ß "Backslash" A
+\\
 endsnippet
