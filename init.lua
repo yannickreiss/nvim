@@ -18,7 +18,7 @@ vim.g.tex_flavor = "latex"
 vim.opt.conceallevel = 2
 vim.opt.guifont = "DroidSansMono Nerd Font 11"
 
--- set colorscheme
+-- set color scheme
 vim.opt.termguicolors = true
 vim.cmd([[
 colorscheme tokyonight-night
@@ -153,7 +153,7 @@ require("mason").setup(require("mason").setup({
 }))
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "clangd", "cmake", "jdtls", "texlab", "pylsp" },
+	-- ensure_installed = { "clangd", "cmake", "jdtls", "texlab", "pylsp" },
 })
 
 require("mason-lspconfig").setup_handlers({
