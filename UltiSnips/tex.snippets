@@ -227,7 +227,7 @@ snippet '(.*)__' "sub" rA
 `!p snip.rv = match.group(1)`_{$1}$0
 endsnippet
 
-snippet '(.*)\*\*' "upup" r
+snippet '(.*)\*\*' "upup" rA
 `!p snip.rv = match.group(1)`^{$1}$0
 endsnippet
 
@@ -259,7 +259,7 @@ snippet fbf "text bold"
 \\textbf{$1}$0
 endsnippet
 
-snippet '\*\*(.+)\*\*' "Make Text bold" rA
+snippet '\#\#(.+)\#\#' "Make Text bold" rA
 \\textbf{`!p snip.rv = match.group(1)`}$0
 endsnippet
 
@@ -490,7 +490,7 @@ $3
 $0
 endsnippet
 
-snippet "menge_(\w+)" "Menge der X Zahlen" rA
+snippet "menge_(\w)" "Menge der X Zahlen" rA
 \\mathbb{`!p snip.rv = match.group(1)`} $0
 endsnippet
 
@@ -542,7 +542,7 @@ snippet != "not equal" iA
 endsnippet
 
 snippet "@(\w)" "insert greek letter" irA
-\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta'}
+\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta', 'd': 'delta', 'D': 'Delta', 'N': 'Eta'}
 try:
 	snip.rv = letters[ match.group(1) ]
 except KeyError:
