@@ -542,7 +542,7 @@ snippet != "not equal" iA
 endsnippet
 
 snippet "@(\w)" "insert greek letter" irA
-\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta', 'd': 'delta', 'D': 'Delta', 'N': 'Eta'}
+\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta', 'd': 'delta', 'D': 'Delta', 'N': 'Eta', 'v': 'varphi', 'V': 'Varphi', 'P': 'partial', 'p': 'pi', 'r': 'rho'}
 try:
 	snip.rv = letters[ match.group(1) ]
 except KeyError:
@@ -553,7 +553,7 @@ snippet _- "Escape _ easier" iA
 \\_
 endsnippet
 
-snippet bsp. "Beispielsweise" iA
+snippet bsp "Beispielsweise" iA
 beispielsweise
 endsnippet
 
