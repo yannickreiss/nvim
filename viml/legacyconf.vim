@@ -38,7 +38,7 @@ nnoremap <C-g> :call Litde()<CR>
 
 " Theme
 nnoremap <M-+> :colo morning<CR>
-nnoremap <M--> :colo tokyonight-night<CR>
+nnoremap <M--> :colo vim-monokai-tasty<CR>
 
 " Fuzzy finder
 nnoremap <C-f> :Lines<CR>

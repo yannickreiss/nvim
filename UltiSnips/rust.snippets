@@ -1,6 +1,8 @@
 snippet fn "function declaration" i
-// $3 $1
-// ${4:Description}
+// @name $1
+// @return $3
+// @brief ${4:Description}
+// @param $2
 fn $1($2) `!p
 if t[3] == "":
 	snip.rv = ""
@@ -11,7 +13,14 @@ else:
 $0
 endsnippet
 
-snippet struct "struct declaration" 
+snippet doxygen "Doxygen comment" b
+// @name ${1:name}
+// @return ${2:Return type}
+// @param ${3:Parameter}
+// @brief ${4:Description}
+endsnippet
+
+snippet struct "struct declaration"
 // $1
 // ${2:Description}
 struct ${1:Name} {
@@ -20,7 +29,7 @@ struct ${1:Name} {
 $0
 endsnippet
 
-snippet impl "implement struct" 
+snippet impl "implement struct"
 // Implementation of $1
 // ${2:Desciption}
 impl ${1:struct} {
@@ -29,7 +38,7 @@ impl ${1:struct} {
 $0
 endsnippet
 
-snippet for "for-loop" 
+snippet for "for-loop"
 for ${1:i} in ${2:$3..$4} {
 	$5
 }$0
@@ -52,7 +61,7 @@ def create_parameter_placeholders(snip):
 
 	if placeholders_amount > 0:
 		anon_snippet_body = anon_snippet_body + ', '
-	
+
 	anon_snippet_body = anon_snippet_body + ', '.join(['$' + str(i+1) for i in range(placeholders_amount, 2*placeholders_amount)]) + ");"
 
 	snip.expand_anon(anon_snippet_body)
@@ -66,4 +75,3 @@ endsnippet
 snippet println "println" A
 println!("$1");$0
 endsnippet
-

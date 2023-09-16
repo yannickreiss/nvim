@@ -21,7 +21,8 @@ vim.opt.guifont = "DroidSansMono Nerd Font 11"
 -- set color scheme
 vim.opt.termguicolors = true
 vim.cmd([[
-colorscheme tokyonight-night
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
 ]])
 
 -- vim.cmd('source ~/.config/nvim/viml/plugins.vim')
@@ -35,7 +36,7 @@ vim.g.UltiSnipsEditSplit = "vertical"
 vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/UltiSnips" }
 
 -- indentLine config
-vim.g.indentLine_char = "┆"
+vim.g.indentLine_char = "•"
 
 -- NERDTree Config
 vim.g.NERDTreeShowHidden = 1

@@ -24,9 +24,9 @@ cmp.setup({
 	-- mapping
 	mapping = cmp.mapping.preset.insert({
 		-- Shift+TAB to go to the Previous Suggested item
-		["<C-s-k>"] = cmp.mapping.select_prev_item(),
+		["<S-Tab>"] = cmp.mapping.select_prev_item(),
 		-- Tab to go to the next suggestion
-		["<C-k>"] = cmp.mapping.select_next_item(),
+		["<Tab>"] = cmp.mapping.select_next_item(),
 		-- CTRL+SHIFT+f to scroll backwards in description
 		["<C-S-f>"] = cmp.mapping.scroll_docs(-4),
 		-- CTRL+F to scroll forwards in the description
@@ -34,7 +34,7 @@ cmp.setup({
 		-- CTRL+SPACE to bring up completion at current Cursor location
 		["<C-Space>"] = cmp.mapping.complete(),
 		-- CTRL+e to exit suggestion and close it
-		["<C-s-CR>"] = cmp.mapping.close(), -- TODO: Search better option
+		["<C-d>"] = cmp.mapping.close(), -- TODO: Search better option
 		-- CR (enter or return) to CONFIRM the currently selection suggestion
 		-- We set the ConfirmBehavior to insert the Selected suggestion
 		["<CR>"] = cmp.mapping.confirm({
@@ -48,8 +48,8 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "nvim_lsp", keyword_length = 1 },
 		{ name = "nvim_lsp_signature_help" },
-		{ name = "nvim_lua", keyword_length = 2 },
-		{ name = "buffer", keyword_length = 4 },
+		{ name = "nvim_lua", keyword_length = 1 },
+		{ name = "buffer", keyword_length = 2 },
 		{ name = "ultisnips", keyword_length = 1 },
 		{ name = "calc" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
