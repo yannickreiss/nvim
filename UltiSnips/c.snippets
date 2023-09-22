@@ -53,7 +53,7 @@ params = t[3].replace(", ", ",").split(",")
 rval = ""
 for param in params:
 	if len(param.split(' ')) >= 2:
-		rval += f"\n *\t@param {param}:\t{t[2]}_{param.split(' ')[1]}"
+		rval += f"\n *\t@param {param}"
 snip.rv = rval`
  */
 ${1:int} ${2:MyFunc} (${3:void});
@@ -69,7 +69,7 @@ params = t[3].replace(", ", ",").split(",")
 rval = ""
 for param in params:
 	if len(param.split(' ')) >= 2:
-		rval += f"\n *\t@param {param}:\t{t[2]}_{param.split(' ')[1]}"
+		rval += f"\n *\t@param {param}"
 snip.rv = rval`
  */
 ${1:int} ${2:MyFunc} (${3:void}) {
@@ -97,7 +97,7 @@ endsnippet
 
 snippet "(\w+) = malloc" "Automativ malloc error implementation" rA
 /* Allocate memory for `!p snip.rv = match.group(1)` */
-`!p snip.rv = match.group(1)` = malloc(sizeof(${1:int}) * $2);
+`!p snip.rv = match.group(1)` = ($1*)malloc(sizeof(${1:int}) * $2);
 if (!`!p snip.rv = match.group(1)`) {
 	/* Error */
 	perror("malloc error on memory allocation of: `!p snip.rv = match.group(1)`");
