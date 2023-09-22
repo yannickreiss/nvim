@@ -9,3 +9,7 @@ focusable
 unmodifiable
 nvim
 buf
+argv
+param
+argc
+filename
