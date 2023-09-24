@@ -13,3 +13,7 @@ argv
 param
 argc
 filename
+hardcoded
+logisim
+intoLogisim
+unallocated
