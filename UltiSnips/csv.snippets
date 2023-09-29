@@ -1,0 +1,32 @@
+global !p
+def complete(t, opts):
+	if t:
+		opts = [ m[len(t):] for m in opts if m.startswith(t)]
+	if len(opts) == 1:
+		return opts[0]
+	else:
+		return f"({'|'.join(opts)})"
+endglobal
+
+snippet mv "Mitglied DLRG Neuaufnahme" bA
+${1}`!p
+snip.rv = complete(t[1], ["Herr", "Frau", "Ohne"])
+`,${2:Vorname},${3:Nachname},${4:63165}`!p
+snip.rv = complete(t[4], ["63165"])`,${5:Adresse},${6:Telefonnummer},${7:Email},${8:Geburtsdatum}`!p
+if t[8] != "Geburtsdatum" and len(t[8]) == 8:
+	if len(t[8]) > 2:
+		t[8] = f"{t[8][0:2]}.{t[8][2:]}"
+	if len(t[8]) > 4:
+		t[8] = f"{t[8][:5]}.{t[8][5:]}"
+`,${9:Eintrittsdatum}`!p
+if t[9] != "Eintrittsdatum" and len(t[9]) == 8:
+	if len(t[9]) > 2:
+		t[9] = f"{t[9][0:2]}.{t[9][2:]}"
+	if len(t[9]) > 4:
+		t[9] = f"{t[9][:5]}.{t[9][5:]}"
+`,DE${10:IBAN}`!p
+if len(t[10]) >= 25:
+	t[10] = t[10].replace(' ', '')
+`,${11:Kontoinhaber*in}
+$0
+endsnippet
