@@ -17,7 +17,7 @@ endsnippet
 snippet exfun "New Function with Documentation"
 /**
  *	@name $2
- *	@return $1
+ *	@return `!p t[1].replace("static ", "")`
  *  @brief ${4: Description}
  *
 	`!p
@@ -31,12 +31,12 @@ snip.rv = rval`
 ${1:int} ${2:MyFunc} (${3:void}) {
 	`!p
 if t[1] != "void":
-	snip.rv = f"{t[1]} rv = 0;"
+	snip.rv = f"{t[1].replace('static ', '')} rv = 0;"
 else:
 	snip.rv = ""`
 	$5
 	`!p
-if t[1] != "void":
+if t[1].replace("static ", "") != "void":
 	snip.rv = f"return rv;"
 else:
 	snip.rv = ""`
@@ -49,7 +49,7 @@ ${1:int} ${2:Name} (${3:void}) {
 	$5
 
 	return ${6:`!p
-if t[1] != "void":
+if t[1].replace("static ", "") != "void":
 	snip.rv = f"0"
 else:
 	snip.rv = ""`};

@@ -40,3 +40,7 @@ clk
 jmp
 pc
 bfpu
+hardcoded
+logisim
+intoLogisim
+unallocated
