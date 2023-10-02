@@ -45,12 +45,12 @@ cmp.setup({
 
 	-- installed sources for code suggestion
 	sources = cmp.config.sources({
+		{ name = "ultisnips", keyword_length = 1 },
 		{ name = "path" },
 		{ name = "nvim_lsp", keyword_length = 1 },
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "nvim_lua", keyword_length = 1 },
 		{ name = "buffer", keyword_length = 2 },
-		{ name = "ultisnips", keyword_length = 1 },
 		{ name = "calc" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
 	}),
