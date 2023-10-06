@@ -12,7 +12,99 @@ snippet "__(\w+) " "This is a variable!" irA
 \$(`!p snip.rv = match.group(1)`) $0
 endsnippet
 
-snippet rule "Add new Rule" 
+snippet gccvarset "gcc based variable set" b
+BIN		= ${1:bfc}
+LANGS	= ${2:CL_CPP_ADA_ASM}
+CC		= ${3:`!p
+if "cl" in t[2].split(' '):
+	snip.rv = "gcc"`}
+CPPC	= ${4:`!p
+if "cpp" in t[2].split(' '):
+	snip.rv = "g++"`}
+ADAC	= ${5:`!p
+if "ada" in t[2].split(' '):
+	snip.rv = "gnat"`}
+AS		= ${6:`!p
+if "asm" in t[2].split(' '):
+	snip.rv = "gcc"`}
+LD		= ${7:ld}
+CFLAGS	= ${8:`!p
+if "cl" in t[2].split(' '):
+	snip.rv = "-Wall"`}
+CPFLAGS = ${9:`!p
+if "cpp" in t[2].split(' '):
+	snip.rv = "-Wall"`}
+ADFLAGS	= ${10:`!p
+if "ada" in t[2].split(' '):
+	snip.rv = "-c -u -vm -we"`}
+ASFLAGS	= ${11:`!p
+if "asm" in t[2].split(' '):
+	snip.rv = "-Wall"`}
+LDFLAGS = ${12:--fatal-warnings}
+
+CFDIR	= ${13:`!p
+if "cl" in t[2].split(' '):
+	snip.rv = "csrc/"`}
+CPPDIR	= ${14:`!p
+if "cpp" in t[2].split(' '):
+	snip.rv = "cppsrc/"`}
+ADADIR	= ${15:`!p
+if "ada" in t[2].split(' '):
+	snip.rv = "adasrc/"`}
+ASFDIR	= ${16:`!p
+if "asm" in t[2].split(' '):
+	snip.rv = "asmsrc/"`}
+INCLUDE	= ${17:include/}
+
+OBJECTS	= $18
+# Create options
+# ${19:Create?(y/n)}
+# ${20:Git?(y/n)}`!p
+from os import system
+if t[19] == "y":
+	if t[13] != "":
+		system(f"mkdir {t[13]}")
+	if t[14] != "":
+		system(f"mkdir {t[14]}")
+	if t[15] != "":
+		system(f"mkdir {t[15]}")
+	if t[16] != "":
+		system(f"mkdir {t[16]}")
+	if t[17] != "":
+		system(f"mkdir {t[17]}")
+	t[19] = "Created!"
+if t[20] == "y":
+	system(f"git init")
+	t[20] = "Initialized repository!"`
+$0
+endsnippet
+
+snippet buildobj "Build an executable from object files." b
+${1:\$(BIN)}: ${2:\$(OBJECTS)}
+	${3:\$(LD)} -o \$@ \$^
+endsnippet
+
+snippet ctoobj "Build object from C file." b
+%.o: ${1:\$(CFDIR)}%.c
+	${2:\$(CC)} ${3:\$(CFLAGS)} -o \$@ -c \$<
+endsnippet
+
+snippet cpptoobj "Build object from CPP file." b
+%.o: ${1:\$(CFDIR)}%.cpp
+	${2:\$(CPPC)} ${3:\$(CPFLAGS)} -o \$@ -c \$<
+endsnippet
+
+snippet astoobj "Build object from assembly file." b
+%.o: ${1:\$(ASFDIR)}%.S
+	${2:\$(AS)} ${3:\$(CFLAGS)} -o \$@ -c \$<
+endsnippet
+
+snippet asmtoobj "Build object from assembly file." b
+%.o: ${1:\$(ASFDIR)}%.asm
+	${2:\$(AS)} ${3:\$(CFLAGS)} -o \$@ -c \$<
+endsnippet
+
+snippet rule "Add new Rule"
 ${1:all}: $2
 	$0
 endsnippet
