@@ -44,16 +44,16 @@ LDFLAGS = ${12:--fatal-warnings}
 
 CFDIR	= ${13:`!p
 if "cl" in t[2].split(' '):
-	snip.rv = "csrc/"`}
+	snip.rv = "src/"`}
 CPPDIR	= ${14:`!p
 if "cpp" in t[2].split(' '):
-	snip.rv = "cppsrc/"`}
+	snip.rv = "src/"`}
 ADADIR	= ${15:`!p
 if "ada" in t[2].split(' '):
-	snip.rv = "adasrc/"`}
+	snip.rv = "src/"`}
 ASFDIR	= ${16:`!p
 if "asm" in t[2].split(' '):
-	snip.rv = "asmsrc/"`}
+	snip.rv = "src/"`}
 INCLUDE	= ${17:include/}
 
 OBJECTS	= $18
@@ -74,7 +74,7 @@ if t[19] == "y":
 		system(f"mkdir {t[17]}")
 	t[19] = "Created!"
 if t[20] == "y":
-	system(f"git init")
+	system(f"git init > /dev/null")
 	t[20] = "Initialized repository!"`
 $0
 endsnippet
