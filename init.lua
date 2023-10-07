@@ -24,15 +24,15 @@ vim.cmd([[
 let g:vim_monokai_tasty_italic = 1
 "colorscheme vim-monokai-tasty
 ]])
-vim.cmd("colorscheme github_dark_high_contrast")
+-- vim.cmd("colorscheme github_dark_high_contrast")
 
 -- vim.cmd('source ~/.config/nvim/viml/plugins.vim')
 require("plugins")
 
 -- UltiSnipsConfig
 vim.g.UltiSnipsExpandTrigger = "<tab>"
-vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+vim.g.UltiSnipsJumpForwardTrigger = "<c-l>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<c-h>"
 vim.g.UltiSnipsEditSplit = "vertical"
 vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/UltiSnips" }
 
