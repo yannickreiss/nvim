@@ -81,7 +81,7 @@ endsnippet
 
 snippet buildobj "Build an executable from object files." b
 ${1:\$(BIN)}: ${2:\$(OBJECTS)}
-	${3:\$(LD)} -o \$@ \$^
+	${3:\$(CC)} -o \$@ \$^ ${4:\$(LDFLAGS)}
 endsnippet
 
 snippet ctoobj "Build object from C file." b
@@ -96,12 +96,12 @@ endsnippet
 
 snippet astoobj "Build object from assembly file." b
 %.o: ${1:\$(ASFDIR)}%.S
-	${2:\$(AS)} ${3:\$(CFLAGS)} -o \$@ -c \$<
+	${2:\$(AS)} ${3:\$(ASFLAGS)} -o \$@ -c \$<
 endsnippet
 
 snippet asmtoobj "Build object from assembly file." b
 %.o: ${1:\$(ASFDIR)}%.asm
-	${2:\$(AS)} ${3:\$(CFLAGS)} -o \$@ -c \$<
+	${2:\$(AS)} ${3:\$(ASFLAGS)} -o \$@ -c \$<
 endsnippet
 
 snippet rule "Add new Rule"

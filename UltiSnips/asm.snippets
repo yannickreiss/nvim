@@ -1,6 +1,6 @@
-snippet string "Assembler string definition" 
+snippet string "Assembler string definition"
 ${1:Name}	db	${2:"Hello World!"}		; string $1 = $2
-len_$1	equ $ - $1		; length of string $1	
+len_$1	equ $ - $1		; length of string $1
 $0
 endsnippet
 
@@ -8,7 +8,7 @@ snippet \n "Zeilenumbruch" A
 ", 0x0a, "
 endsnippet
 
-snippet write "write sys_call" 
+snippet write "write sys_call"
 mov		eax, 4		; write sys_call
 mov		ebx, 1		; write to stdout
 mov		ecx, ${1:string}		; string to write
@@ -17,13 +17,13 @@ int		0x80		; system interrupt
 $0
 endsnippet
 
-snippet exit "exit sys_call" 
+snippet exit "exit sys_call"
 mov		eax, 1		; exit sys_call
 mov		ebx, ${1:0}	; exit Code
 int		0x80		; system interrupt$0
 endsnippet
 
-snippet template "Template for assembly program" 
+snippet template "Template for assembly program"
 global ${1:_start}		; linker entry point
 ;	Author: 		${2: Yannick Reiß}
 ;	Date:			`date`
@@ -40,15 +40,15 @@ $1:
 $0
 endsnippet
 
-snippet read "read sys call" 
+snippet read "read sys call"
 mov		eax, 3		; read sys call
 mov		ebx, 2		; stdin file descriptor
 mov		ecx, ${1: variable}	; read input value in $1
 mov		edx, ${2:5}		; read $2 bytes of data
-int		0x80		; system interrupt	
+int		0x80		; system interrupt
 endsnippet
 
-snippet aprstore "Store all purpose register on stack" 
+snippet aprstore "Store all purpose register on stack"
 ; store ap-register
 push	eax
 push	ebx
@@ -57,7 +57,7 @@ push	edx
 $0
 endsnippet
 
-snippet aprload "Load all purpose register from stack" 
+snippet aprload "Load all purpose register from stack"
 ; load ap-register
 pop		eax
 pop		ebx
@@ -66,3 +66,14 @@ pop		edx
 $0
 endsnippet
 
+snippet gcc_function "GCC conform function implementation" b
+$1:
+	push %ebp
+	mov %esp, %ebp
+
+	$2
+
+	mov %ebp, %esp
+	pop %ebp
+	ret
+endsnippet
