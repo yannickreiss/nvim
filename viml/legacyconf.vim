@@ -1,7 +1,7 @@
 " NERDTree remap
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-nnoremap <C-a> :NERDTreeToggle<CR>
+nmap <C-e> :NERDTreeToggle<CR>
 
 " open builtin terminal
 function OpenTerm()

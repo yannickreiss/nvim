@@ -24,9 +24,9 @@ cmp.setup({
 	-- mapping
 	mapping = cmp.mapping.preset.insert({
 		-- Shift+TAB to go to the Previous Suggested item
-		["<S-Tab>"] = cmp.mapping.select_prev_item(),
+		["<C-k>"] = cmp.mapping.select_prev_item(),
 		-- Tab to go to the next suggestion
-		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<C-j>"] = cmp.mapping.select_next_item(),
 		-- CTRL+SHIFT+f to scroll backwards in description
 		["<C-S-f>"] = cmp.mapping.scroll_docs(-4),
 		-- CTRL+F to scroll forwards in the description
