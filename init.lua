@@ -24,9 +24,8 @@ vim.cmd([[
 let g:vim_monokai_tasty_italic = 1
 "colorscheme vim-monokai-tasty
 ]])
--- vim.cmd("colorscheme github_dark_high_contrast")
+vim.cmd("colorscheme github_dark_high_contrast")
 
--- vim.cmd('source ~/.config/nvim/viml/plugins.vim')
 require("plugins")
 
 -- UltiSnipsConfig
