@@ -49,4 +49,21 @@ return require("packer").startup(function(use)
 	use("patstockwell/vim-monokai-tasty")
 	use("yannickreiss/nvim-navigator")
 	use("tpope/vim-speeddating")
+	use("jaredgorski/SpaceCamp")
+	use("projekt0n/github-nvim-theme")
+	use({
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				theme = "hyper", -- alt = 'doom'
+				config = {
+					week_header = {
+						enable = true,
+					},
+				},
+			})
+		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
 end)

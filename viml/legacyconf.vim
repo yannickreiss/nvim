@@ -38,7 +38,7 @@ nnoremap <C-g> :call Litde()<CR>
 
 " Theme
 nnoremap <M-+> :colo github_light_high_contrast<CR>
-nnoremap <M--> :colo vim-monokai-tasty<CR>
+nnoremap <M--> :colo spacecamp_lite<CR>
 
 " Fuzzy finder
 nnoremap <C-f> :Lines<CR>
