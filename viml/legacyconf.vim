@@ -33,8 +33,8 @@ function Liten()
     set spell spelllang=en_us
 endfunction
 
-nnoremap <C-e> :call Liten()<CR>
-nnoremap <C-g> :call Litde()<CR>
+nnoremap <M-e> :call Liten()<CR>
+nnoremap <M-g> :call Litde()<CR>
 
 " Theme
 nnoremap <M-+> :colo github_light_high_contrast<CR>
