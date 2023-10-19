@@ -40,7 +40,7 @@ if "ada" in t[2].split(' '):
 ASFLAGS	= ${11:`!p
 if "asm" in t[2].split(' '):
 	snip.rv = "-Wall"`}
-LDFLAGS = ${12:--fatal-warnings}
+LDFLAGS = ${12:-lc --fatal-warnings}
 
 CFDIR	= ${13:`!p
 if "cl" in t[2].split(' '):
