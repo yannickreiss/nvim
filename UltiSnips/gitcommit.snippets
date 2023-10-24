@@ -1,0 +1,16 @@
+global !p
+def complete(t, opts):
+	if t:
+		opts = [m[len(t):] for m in opts if m.startswith(t)]
+	if len(opts) == 1:
+		return opts[0]
+	return '(' + '|'.join(opts) + ')'
+endglobal
+
+snippet !! "Standard message" bA
+$1`!p snip.rv=complete(t[1], ["BUG", "INFO", "UPDATE", "FEATURE", "ADD"])`: $2`!p snip.rv=complete(t[2], ["OPEN", "CLOSE", "FIX", "WARNING", "ERROR", "ADD", "REMOVED", "TODO"])` `!p
+if t[3] == "":
+	snip.rv = ""
+else:
+	snip.rv = "=>"` $3
+endsnippet
