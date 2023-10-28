@@ -100,7 +100,7 @@ snippet "(\w+) = malloc" "Automativ malloc error implementation" rA
 `!p snip.rv = match.group(1)` = ($1*)malloc(sizeof(${1:int}) * $2);
 if (!`!p snip.rv = match.group(1)`) {
 	/* Error */
-	perror("malloc error on memory allocation of: `!p snip.rv = match.group(1)`");
+	(void)printf("malloc error on memory allocation of: `!p snip.rv = match.group(1)`!\n");
 	exit(EXIT_FAILURE);
 }
 $0

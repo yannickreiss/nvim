@@ -1,0 +1,112 @@
+snippet book "Add book reference" b
+@book{${1:ref_name},
+	author	= {${2:Autor}},
+	year	= {${3:2023}},
+	title	= {${4:Buchtitel}},`!p
+if t[5] != "":
+	snip.rv = "\n\tedition\t= {"
+else:
+	snip.rv = ""`${5:Auflage}`!p
+if t[5] != "":
+	snip.rv = "},"
+else:
+	snip.rv = ""`
+	publisher = {${6:Verlag}}
+}
+$0
+endsnippet
+
+snippet article "Add article reference" b
+@article{${1:ref_name},
+	title={${2:Titel}},
+	author={${3:Autor}},
+	journal={${4:Journal}},`!p
+if t[5] != "":
+	snip.rv = "\n\tvolume\t= {"
+else:
+	snip.rv = ""`${5:Band/Ausgabe}`!p
+if t[5] != "":
+	snip.rv = "},"
+else:
+	snip.rv = ""``!p
+if t[6] != "":
+	snip.rv = "\n\tnumber\t= {"
+else:
+	snip.rv = ""`${6:Nummer}`!p
+if t[6] != "":
+	snip.rv = "},"
+else:
+	snip.rv = ""``!p
+if t[7] != "":
+	snip.rv = "\n\tpages\t= {"
+else:
+	snip.rv = ""`${7:von--bis}`!p
+if t[7] != "":
+	snip.rv = "},"
+else:
+	snip.rv = ""`
+	year={${8:2023}},
+	publisher={${9:Verlag}}
+}
+$0
+endsnippet
+
+snippet inproceedings "Conference proceeding articles" b
+@inproceedings{${1:ref_name},
+	author = {${2:Autor}},
+	title = {${3:Vortragstitel}},
+	booktitle = {${4:Buchtitel}},
+	year = {${5:2023}},`!p
+if t[6] != "":
+	snip.rv = "\n\tpages\t= {"
+else:
+	snip.rv = ""`${6:von--bis}`!p
+if t[6] != "":
+	snip.rv = "},"
+else:
+	snip.rv = ""`
+}
+$0
+endsnippet
+
+snippet inbook "Chapter of a book" b
+@inbook{${1:ref_name},
+	title={${2:Titel}},`!p
+if t[3] != "":
+	snip.rv = "\n\tedition\t= {"
+else:
+	snip.rv = ""`${3:Ausgabe}`!p
+if t[3] != "":
+	snip.rv = "},"
+else:
+	snip.rv = ""`
+	author={${4:Autor}},
+	year={${5:2023}},
+	publisher={${6:Verlag}},
+	chapter={${7:Kapitel}}
+}
+$0
+endsnippet
+
+snippet web "Webpage" b
+@misc{${1:ref_name},
+	author = {${2:Autor}},
+	title = {${3:Titel}},
+	year = {${4:2023}},
+	note = {Abgerufen am: ${5:`date`}},
+	url = {${6:URL}}
+}
+$0
+endsnippet
+
+snippet video "Video (Netz)" b
+@misc{${1:ref_name},
+	author = {${2:Autor}},
+	title = {${3:Titel}},
+	year = {${4:2023}},
+	note = {${5:start}--${6:ende}},
+	url = {${7:URL}},
+	urldate = {${8:`date`}}
+}
+$0
+endsnippet

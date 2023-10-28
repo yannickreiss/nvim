@@ -38,7 +38,7 @@ nnoremap <M-g> :call Litde()<CR>
 
 " Theme
 nnoremap <M-+> :colo github_light_high_contrast<CR>
-nnoremap <M--> :colo vim-monokai-tasty<CR>
+nnoremap <M--> :colo default<CR>
 
 " Fuzzy finder
 nnoremap <C-f> :Lines<CR>
@@ -99,5 +99,5 @@ function! Build()
 endfunction
 
 nnoremap <C-b> :call Build()<CR>
-nnoremap <C-x> :bdelete<CR>
+nnoremap <C-w> :bdelete<CR>
 nnoremap <C-y> :b#<CR>

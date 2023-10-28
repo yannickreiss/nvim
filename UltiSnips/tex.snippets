@@ -560,3 +560,20 @@ endsnippet
 snippet ß "Backslash" A
 \\
 endsnippet
+
+snippet bibbook "Add a new book/journal/paper reference" b
+\\bibitem{${1:Reference_name}}
+${2:Author}. (${3:2023}) \`${4:Title}'. ${5:Extension} `!p
+if t[6] == "":
+	snip.rv = ""
+elif "-" in t[6]:
+	snip.rv = "Seiten "
+else:
+	snip.rv = "Seite"
+`$6`!p
+if t[6] == "":
+	snip.rv = ""
+else:
+	snip.rv = "."`
+$0
+endsnippet
