@@ -386,9 +386,11 @@ snippet timenow "The current time"
 endsnippet
 
 snippet texmeta "Meta with stamp for better documentation"
-% ${1:Name} `!p import random as ran
-if not snip.c:
-	snip.rv = t[1][0] + str(ran.randint(10, 100))`: ${2:Content} on `date` by ${3:`echo $USER`}
+% ${1:Name}`!p
+if t[1] == "":
+	t[1] = "?"
+else:
+	t[1] = t[1].replace("?", "")` `!p	snip.rv = t[1][0] ``!v line('.')`: ${2:Content} on `date` by ${3:`echo $USER`}
 $0
 endsnippet
 
@@ -542,7 +544,7 @@ snippet != "not equal" iA
 endsnippet
 
 snippet "@(\w)" "insert greek letter" irA
-\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta', 'd': 'delta', 'D': 'Delta', 'N': 'Eta', 'v': 'varphi', 'V': 'Varphi', 'P': 'partial', 'p': 'pi', 'r': 'rho'}
+\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta', 'd': 'delta', 'D': 'Delta', 'N': 'Eta', 'v': 'varphi', 'V': 'Varphi', 'P': 'partial', 'p': 'pi', 'r': 'rho', 'S': 'Sigma', 's': 'sigma'}
 try:
 	snip.rv = letters[ match.group(1) ]
 except KeyError:
