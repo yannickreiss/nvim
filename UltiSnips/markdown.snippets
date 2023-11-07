@@ -67,3 +67,21 @@ $5
 -----------------------------------------------------------
 $0
 endsnippet
+
+snippet info "The Markdown Information panel" b
+---
+
+${1:Info}
+
+Tags: $2
+$0
+endsnippet
+
+snippet cite "Cite from a paper" b
+---
+
+> ${1:Citation}`!p t[1].replace('\n', '\n> ')`
+
+Tags: $2
+$0
+endsnippet

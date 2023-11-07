@@ -152,10 +152,6 @@ snippet href "html reference"
 \\href{${1:link}}{\\underline{\\textcolor{blue}{${2:Text}}}}$0
 endsnippet
 
-snippet *_ "Intervall/Isotope-Notation" i
-^{$1}_{$2}$0
-endsnippet
-
 snippet hook "Reference to text"
 \\hyperref[$1]{$2}$0
 endsnippet
@@ -176,7 +172,7 @@ snippet ,t "Mathmode-text" iA
 \\text{$1}$0
 endsnippet
 
-snippet period "Periodic number" i
+snippet prd "Periodic number" i
 \\overline{$1}$0
 endsnippet
 
@@ -201,26 +197,12 @@ snippet ival "Intervall"
 \\interval[$1]{$2}{$3}$0
 endsnippet
 
-snippet xx "multiplication" i
+snippet xx "multiplication" iA
 \\cdot $0
 endsnippet
 
 snippet root "nth root" i
 \\sqrt[$1]{$2} $0
-endsnippet
-
-snippet sdef "Definition"
-\\colorbox{blue!25}{Definition: $1} \\\\\\$0
-endsnippet
-
-snippet mlgs "Lineares Gleichungssytem"
-\\begin{gather}
-$0
-\\end{gather}
-endsnippet
-
-snippet cobol "COBOL config"
-\\lstset{ basicstyle=\\ttfamily\\small, language=COBOL, numbers=left, keywordstyle=\\color{blue}\\bfseries} $0
 endsnippet
 
 snippet '(.*)__' "sub" rA
@@ -305,11 +287,6 @@ snippet mquote "max quote"
 \`$1\` (${2:author} : \\textit{${3:source}}, ${4:year})$0
 endsnippet
 
-snippet qed "Quod erat demonstrantum"
-\qed
-$0
-endsnippet
-
 snippet <- "Easy Left" iA
 \\(\\leftarrow\\)$0
 endsnippet
@@ -324,65 +301,6 @@ endsnippet
 
 snippet -> "Easy Right" iA
 \\(\\rightarrow\\)$0
-endsnippet
-
-snippet circuit "Circuit environment"
-\\colorbox{blue!10}{
-\\begin{circuitikz}[european resistors]
-$1
-\\end{circuitikz}}
-$0
-endsnippet
-
-snippet edraw "Draw into electric circuit"
-\\draw(${1:0}, ${2:0})
-$3
-;
-$0
-endsnippet
-
-snippet 'R "Insert Resistor"
-to [R=$R_{$1}: $2 \Omega$, ${3:i =$i$}, ${4:*-*}] ($5, $6)
-$0
-endsnippet
-
-snippet 'W "Wire"
-to [short, ${1:i=$i$}, ${2:*-*}] ($3, $4)
-$0
-endsnippet
-
-snippet 'V "Voltage"
-to [V, v=$U_{$1}: $2V$, ${3:i=$i$}, ${4:*-*}] ($5, $6)
-$0
-endsnippet
-
-snippet 'L "Coil"
-to [L=$L_{$1}: $2H$, ${3:i=$i$}, ${4:*-*}] ($4, $5)
-$0
-endsnippet
-
-snippet 'C "Capacitor"
-to [C=$C_{$1}: $2F$, ${3:i=$i$}, ${4:*-*}] ($3, $4)
-$0
-endsnippet
-
-snippet 'W' "Wired powerline"
-to [short, ${1:*-*}] ($2, $3)
-$0
-endsnippet
-
-snippet 'G "GROUND"
-to [short] node[ground] {$1} ($2, $3)
-$0
-endsnippet
-
-snippet 'SA "(Sende)-Antenne"
-to [short] node[antenna] {$1} ($2, $3)
-$0
-endsnippet
-
-snippet timenow "The current time"
-`date`
 endsnippet
 
 snippet texmeta "Meta with stamp for better documentation"
@@ -508,21 +426,6 @@ snippet usw "und so weiter" i
 und so weiter
 endsnippet
 
-snippet tikzenv "tikzenvironment" A
-\\begin{tikzpicture}
-	$1
-\\end{tikzpicture}
-$0
-endsnippet
-
-snippet flowstart "insert flowstart"
-\\flowstart{$1}{$2}$0
-endsnippet
-
-snippet flowstop "insert flowstop"
-\\flowstop{$1}{$2}$0
-endsnippet
-
 snippet %% "Percent" iA
 \%$0
 endsnippet
@@ -578,4 +481,8 @@ if t[6] == "":
 else:
 	snip.rv = "."`
 $0
+endsnippet
+
+snippet cc "Cite" A
+\\cite{$1}$0
 endsnippet

@@ -74,3 +74,16 @@ testBrackets
 CCompiler
 Tokenize
 tokenize
+SpinalHDL
+HSM
+riscv
+https
+VexRiscv
+VexRiscv
+crypto
+openlane
+IHP
+AUTOSAR
+toolchain
+FPGAs
+efabless
