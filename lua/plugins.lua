@@ -67,4 +67,13 @@ return require("packer").startup(function(use)
 		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 	use("hiroakis/cyberspace.vim") -- I'm feeling cyber
+	use({
+		"paopaol/cmp-doxygen",
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
+	})
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use("f3fora/cmp-spell")
 end)

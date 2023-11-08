@@ -53,6 +53,9 @@ cmp.setup({
 		{ name = "buffer", keyword_length = 2 },
 		{ name = "calc" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
+		{ name = "doxygen" },
+		{ name = "cmp_tabnine" },
+		{ name = "spell", option = { keep_all_entries = false }, keyword_length = 3 },
 	}),
 
 	-- add formatting of the different sources
