@@ -47,15 +47,16 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "ultisnips", keyword_length = 1 },
 		{ name = "path" },
-		{ name = "nvim_lsp", keyword_length = 1 },
+		{ name = "nvim_lsp", keyword_length = 2 },
 		{ name = "nvim_lsp_signature_help" },
-		{ name = "nvim_lua", keyword_length = 1 },
-		{ name = "buffer", keyword_length = 2 },
+		{ name = "nvim_lua", keyword_length = 4 },
+		{ name = "buffer", keyword_length = 6 },
 		{ name = "calc" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
 		{ name = "doxygen" },
-		{ name = "cmp_tabnine" },
-		{ name = "spell", option = { keep_all_entries = false }, keyword_length = 3 },
+		{ name = "cmp_tabnine", keyword_length = 5 },
+		{ name = "spell", option = { keep_all_entries = false }, keyword_length = 2 },
+		{ name = "fuzzy_buffer", keyword_length = 3 },
 	}),
 
 	-- add formatting of the different sources
@@ -65,10 +66,13 @@ cmp.setup({
 			local menu_icon = {
 				nvim_lsp = "λ",
 				ultisnips = "⋗",
-				buffer = "b",
-				path = "p",
+				path = "🌐",
 				calc = "Σ",
-				lualatexsymbols = "L",
+				lualatexsymbols = "𝕋",
+				cmp_tabnine = "⍟",
+				spell = "📚",
+				doxygen = "O₂",
+				fuzzy_buffer = "📄",
 			}
 			item.menu = menu_icon[entry.source.name]
 			return item
