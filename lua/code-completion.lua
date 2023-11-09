@@ -16,10 +16,10 @@ cmp.setup({
 	},
 
 	-- Add borders to the windows
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
+	-- window = {
+	-- 	completion = cmp.config.window.bordered(),
+	-- 	documentation = cmp.config.window.bordered(),
+	-- },
 
 	-- mapping
 	mapping = cmp.mapping.preset.insert({
@@ -50,13 +50,11 @@ cmp.setup({
 		{ name = "nvim_lsp", keyword_length = 2 },
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "nvim_lua", keyword_length = 4 },
-		{ name = "buffer", keyword_length = 6 },
+		{ name = "buffer", keyword_length = 1 },
 		{ name = "calc" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
-		{ name = "doxygen" },
-		{ name = "cmp_tabnine", keyword_length = 5 },
-		{ name = "spell", option = { keep_all_entries = false }, keyword_length = 2 },
-		{ name = "fuzzy_buffer", keyword_length = 3 },
+		-- { name = "spell", option = { keep_all_entries = false }, keyword_length = 2 },
+		{ name = "fuzzy_buffer", keyword_length = 4 },
 	}),
 
 	-- add formatting of the different sources
@@ -68,10 +66,9 @@ cmp.setup({
 				ultisnips = "⋗",
 				path = "🌐",
 				calc = "Σ",
+				buffer = "📚",
 				lualatexsymbols = "𝕋",
-				cmp_tabnine = "⍟",
-				spell = "📚",
-				doxygen = "O₂",
+				-- spell = "📚",
 				fuzzy_buffer = "📄",
 			}
 			item.menu = menu_icon[entry.source.name]

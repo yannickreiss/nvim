@@ -170,19 +170,4 @@ if vim.g.neovide then
 	vim.g.neovide_scale_factor = 1.0
 end
 
-local tabnine = require("cmp_tabnine.config")
-
-tabnine:setup({
-	max_lines = 50,
-	max_num_results = 5,
-	sort = true,
-	run_on_every_keystroke = true,
-	snippet_placeholder = "..",
-	ignored_file_types = {
-		html = true,
-		css = true,
-	},
-	show_prediction_strength = false,
-})
-
 vim.cmd("source ~/.config/nvim/viml/legacyconf.vim")
