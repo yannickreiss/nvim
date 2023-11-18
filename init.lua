@@ -160,6 +160,15 @@ require("mason-lspconfig").setup_handlers({
 	function(clangd)
 		require("lspconfig")[clangd].setup({})
 	end,
+	["als"] = function()
+		require("lspconfig").als.setup({
+			settings = {
+				ada = {
+					projectFile = "default.gpr",
+				},
+			},
+		})
+	end,
 })
 
 require("code-completion")
