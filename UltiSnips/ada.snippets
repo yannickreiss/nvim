@@ -2,7 +2,7 @@ snippet textio "Insert Textio import" b
 with Ada.Text_IO;$0
 endsnippet
 
-snippet procedure "insert procedure" bA
+snippet procedure "insert procedure" b
 -- @name $1
 -- @return
 `!p
@@ -23,7 +23,7 @@ begin
 end $1;$0
 endsnippet
 
-snippet function "insert function" bA
+snippet function "insert function" b
 -- @name $1
 -- @return $3
 -- @param $2
@@ -58,7 +58,7 @@ def complete(t, opts):
 	return "(" + "|".join(opts) + ")"
 endglobal
 
-snippet if "If condition" bA
+snippet if "If condition" b
 if $1 then
 	$2
 $3`!p snip.rv = complete(t[3], ["elsif", "else", "end if;"])` ${4:`!p if t[3] == "elsif":
@@ -101,4 +101,11 @@ endsnippet
 
 snippet type "declare a new type" bA
 type ${1:TypeName} is ${2:array($3..$4)} of ${5:Integer};$0
+endsnippet
+
+snippet docstring "Document String with most important infor" b
+-- `!p snip.rv = fn`
+-- Created on: `date`
+-- Author(s): ${1:Yannick Reiß}
+-- Content: ${2: Function `!p snip.rv = fn.split('.')[0]`}
 endsnippet
