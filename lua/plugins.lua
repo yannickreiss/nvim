@@ -54,4 +54,5 @@ return {
 	"neovim/nvim-lspconfig",
 	"mfussenegger/nvim-dap",
 	"mhartington/formatter.nvim",
+	"mg979/vim-visual-multi",
 }

@@ -38,5 +38,6 @@
   "vim-monokai-tasty": { "branch": "master", "commit": "247324e0170e19de0018e7c8e437f83b6f0ef6fc" },
   "vim-speeddating": { "branch": "master", "commit": "5a36fd29df63ea3f65562bd2bb837be48a5ec90b" },
   "vim-startuptime": { "branch": "master", "commit": "454b3de856b7bd298700de33d79774ca9b9e3875" },
-  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vim-visual-multi": { "branch": "master", "commit": "aec289a9fdabaa0ee6087d044d75b32e12084344" }
 }
