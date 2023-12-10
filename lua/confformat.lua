@@ -18,7 +18,7 @@ require("formatter").setup({
 		},
 
 		c = {
-			require("formatter.filetypes.c").clangformat,
+			require("formatter.filetypes.c").astyle,
 		},
 
 		cpp = {

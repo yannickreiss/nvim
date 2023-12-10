@@ -23,3 +23,5 @@ require("plugconfig")
 require("confformat")
 
 vim.cmd("source ~/.config/nvim/viml/plugconfig.vim")
+
+local plugtestbench = require("plugbench")
