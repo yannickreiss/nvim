@@ -22,7 +22,7 @@ require("formatter").setup({
 		},
 
 		cpp = {
-			require("formatter.filetypes.cpp").clangformat,
+			require("formatter.filetypes.cpp").astyle,
 		},
 
 		html = {
