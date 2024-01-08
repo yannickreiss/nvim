@@ -3,7 +3,7 @@ filetype on
 filetype plugin on
 syntax on
 
-colorscheme vim-monokai-tasty
+colorscheme slate
 
 " open builtin terminal
 function OpenTerm()
@@ -32,5 +32,5 @@ nnoremap <M-e> :call Liten()<CR>
 nnoremap <M-g> :call Litde()<CR>
 
 " Theme
-nnoremap <M-+> :colo tokyonight-day<CR>
-nnoremap <M--> :colo tokyonight-night<CR>
+nnoremap <M-+> :colo shine<CR>
+nnoremap <M--> :colo slate<CR>
