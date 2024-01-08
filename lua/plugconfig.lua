@@ -12,18 +12,6 @@ vim.g.NERDTreeShowHidden = 1
 vim.g.lexima_enable_basic_rules = 1
 vim.g.lexima_enable_newline_rules = 1
 
--- Telescope snippet
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<c-f>", builtin.current_buffer_fuzzy_find, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>fc", builtin.commands, {})
-
--- Telescope + Ultisnips
-require("telescope").load_extension("ultisnips")
-vim.keymap.set("n", "<leader>fs", require("telescope").extensions.ultisnips.ultisnips, {})
-
 -- NERDTree Config
 vim.g.NERDTreeDirArrowExpandable = "▸"
 vim.g.NERDTreeDirArrowCollapsible = "▾"
