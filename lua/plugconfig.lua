@@ -20,9 +20,6 @@ vim.g.NERDTreeDirArrowCollapsible = "▾"
 vim.g.gitblame_message_template = "		=>	<author> • <date> • <summary>"
 vim.g.gitblame_date_format = "%r"
 
--- Intendation basics
-require("ibl").setup()
-
 -- Code completion
 require("code-completion")
 
