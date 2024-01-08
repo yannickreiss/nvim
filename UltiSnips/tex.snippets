@@ -446,12 +446,13 @@ snippet != "not equal" iA
 \\neq $0
 endsnippet
 
-snippet "@(\w)" "insert greek letter" irA
-\\`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta', 'd': 'delta', 'D': 'Delta', 'N': 'Eta', 'v': 'varphi', 'V': 'Varphi', 'P': 'partial', 'p': 'pi', 'r': 'rho', 'S': 'Sigma', 's': 'sigma'}
+snippet "@(\w)" "insert greek letter" ir
+`!p letters = {'a': 'alpha', 'A': 'Alpha', 'b': 'beta', 'B': 'Beta', 'g': 'gamma', 'G': 'Gamma', 'e': 'epsilon', 'E': 'Epsilon', 'o': 'omega', 'O': 'Omega', 'm': 'mu', 'M': 'Mu', 'n': 'eta', 'd': 'delta', 'D': 'Delta', 'N': 'Eta', 'v': 'varphi', 'V': 'Varphi', 'P': 'partial', 'p': 'pi', 'r': 'rho', 'S': 'Sigma', 's': 'sigma'}
 try:
-	snip.rv = letters[ match.group(1) ]
+	snip.rv = "\\" + letters[ match.group(1) ]
+
 except KeyError:
-	snip.rv = "UNDEFINED"`
+	snip.rv = "!!UNDEFINED"`
 endsnippet
 
 snippet _- "Escape _ easier" iA

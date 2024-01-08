@@ -54,7 +54,7 @@ cmp.setup({
 		{ name = "calc" },
 		{ name = "lua-latex-symbols", option = { cache = true } },
 		-- { name = "spell", option = { keep_all_entries = false }, keyword_length = 2 },
-		{ name = "fuzzy_buffer", keyword_length = 4 },
+		-- { name = "fuzzy_buffer", keyword_length = 4 },
 	}),
 
 	-- add formatting of the different sources

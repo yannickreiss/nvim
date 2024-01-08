@@ -1,11 +1,11 @@
-snippet fun "New function" 
+snippet fun "New function"
 function ${1:Name} ($2)
 	$3
 end;
 $0
 endsnippet
 
-snippet while "while-loop" 
+snippet while "while-loop"
 while (${1:true})
 do
 	$1
@@ -13,7 +13,7 @@ end;
 $0
 endsnippet
 
-snippet for "for loop" 
+snippet for "for loop"
 for ${1:i = 0}, ${2:target}, ${3:1}
 do
 	$4
@@ -21,14 +21,14 @@ end;
 $0
 endsnippet
 
-snippet repeat "repeat until loop" 
+snippet repeat "repeat until loop"
 repeat
 	$2
 until (${1:Condition});
 $0
 endsnippet
 
-snippet ifthen "normal if clause" 
+snippet ifthen "normal if clause"
 if (${1:Condition})
 then
 	$2
@@ -36,7 +36,7 @@ end;
 $0
 endsnippet
 
-snippet ifelse "if and else clause" 
+snippet ifelse "if and else clause"
 if (${1:Condition})
 then
 	$1
@@ -52,3 +52,10 @@ snippet "= fun" "Assign a function" rA
 end;$0
 endsnippet
 
+snippet docstring "Document string" b
+-- Filename:	`!p snip.rv = fn`
+-- Author:		${1:Yannick Reiß}
+-- Copyright:	${2:MIT-License}
+-- Description:	${3:Funny lua script}
+$0
+endsnippet
