@@ -23,12 +23,6 @@ return {
 	"p00f/nvim-ts-rainbow",
 	"cohama/lexima.vim",
 	"ryanoasis/vim-devicons",
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	"fhill2/telescope-ultisnips.nvim",
 	"hiroakis/cyberspace.vim",
 	"tpope/vim-speeddating",
 	"yannickreiss/nvim-doxyscan",
@@ -56,8 +50,5 @@ return {
 	"mfussenegger/nvim-dap",
 	"mhartington/formatter.nvim",
 	"mg979/vim-visual-multi",
-	{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-	{ "tzachar/fuzzy.nvim", requires = { "nvim-telescope/telescope-fzf-native.nvim" } },
-	{ "tzachar/cmp-fuzzy-buffer", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } },
 	"quangnguyen30192/cmp-nvim-ultisnips",
 }
