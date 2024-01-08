@@ -156,3 +156,16 @@ M4
 on
 evaluator
 basisc
+untrusted
+VHDL
+floorplanning
+toolchains
+OpenLane
+floorplanner
+combinational
+pinetime
+nRF52832
+nordic
+openROAD
+gcc
+linux
